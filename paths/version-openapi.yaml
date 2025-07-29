@@ -1,0 +1,14 @@
+get:
+  summary: OpenAPI specification for this API version
+  description: Gets specification for this API version as an openapi.json file.
+  operationId: getOpenAPI
+  tags:
+    - Version
+  security: []   # No security
+  responses:
+    200:
+      description: Successfully returned the openapi.json file.
+      content:
+        application/json:
+          schema:
+            type: object

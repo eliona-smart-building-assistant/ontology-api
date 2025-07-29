@@ -1,0 +1,74 @@
+openapi: 3.0.3
+info:
+  contact:
+    email: hello@eliona.io
+    name: Eliona by IoTEC AG
+    url: https://eliona.io
+  description: The Eliona Ontology REST API enables access to the resources and data
+    of an Eliona environment.
+  license:
+    name: MIT License
+  title: Eliona Ontology REST API
+  version: 0.0.1
+externalDocs:
+  description: Find out more about Eliona App SDK
+  url: https://github.com/eliona-smart-building-assistant
+servers:
+- url: "https://{environment}.eliona.io/ontology/v1"
+  variables:
+    environment:
+      default: name
+      description: Environment name to define the server URL
+- url: "https://{environment}.eliona.io/api/ontology/v1"
+  variables:
+    environment:
+      default: name
+      description: Environment name to define the server URL
+- url: "https://{server}/ontology/v1"
+  variables:
+    server:
+      default: somewhere:3000
+      description: Server of the API
+- url: "http://{server}/ontology/v1"
+  variables:
+    server:
+      default: localhost:3000
+      description: Server of the API
+tags:
+- description: API version
+  externalDocs:
+    url: https://www.eliona.io
+  name: Version
+paths:
+  /version:
+    get:
+      description: Gets information about the APIs version.
+      operationId: getVersion
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                type: object
+          description: Successfully returned the APIs version.
+      security: []
+      summary: Version of the API
+      tags:
+      - Version
+  /version/openapi.json:
+    get:
+      description: Gets specification for this API version as an openapi.json file.
+      operationId: getOpenAPI
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                type: object
+          description: Successfully returned the openapi.json file.
+      security: []
+      summary: OpenAPI specification for this API version
+      tags:
+      - Version
+components:
+  schemas: {}

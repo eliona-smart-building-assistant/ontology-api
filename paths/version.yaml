@@ -1,0 +1,14 @@
+get:
+  summary: Version of the API
+  description: Gets information about the APIs version.
+  operationId: getVersion
+  tags:
+    - Version
+  security: []   # No security
+  responses:
+    200:
+      description: Successfully returned the APIs version.
+      content:
+        application/json:
+          schema:
+            type: object

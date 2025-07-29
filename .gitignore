@@ -1,0 +1,6 @@
+*.iml
+.idea/**
+openapi-generator-cli-6.0.0.jar
+gen
+.openapi-generator
+/examples/http-client.private.env.json
