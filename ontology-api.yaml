@@ -34,7 +34,7 @@ externalDocs:
   url: https://github.com/eliona-smart-building-assistant
 
 servers:
-  - url: https://{environment}.eliona.io/ontology/v1
+  - url: https://{environment}.eliona.io/v1
     variables:
       environment:
         default: name
@@ -44,12 +44,12 @@ servers:
       environment:
         default: name
         description: Environment name to define the server URL
-  - url: https://{server}/ontology/v1
+  - url: https://{server}/v1
     variables:
       server:
         default: somewhere:3000
         description: Server of the API
-  - url: http://{server}/ontology/v1
+  - url: http://{server}/v1
     variables:
       server:
         default: localhost:3000
