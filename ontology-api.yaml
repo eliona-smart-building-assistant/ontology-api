@@ -18,8 +18,10 @@ openapi: 3.0.3
 info:
   version: 0.0.1
   title: Eliona Ontology REST API
-  description:
-    The Eliona Ontology REST API enables access to the resources and data of an Eliona environment.
+  description: "
+    The Ontology REST API for Eliona offers access to the resources and data of an Eliona environment.
+    See also [Eliona API](/).
+    "
   contact:
     name: Eliona by IoTEC AG
     url: https://eliona.io
