@@ -4,8 +4,8 @@ info:
     email: hello@eliona.io
     name: Eliona by IoTEC AG
     url: https://eliona.io
-  description: The Eliona Ontology REST API enables access to the resources and data
-    of an Eliona environment.
+  description: " The Ontology REST API for Eliona offers access to the resources and\
+    \ data of an Eliona environment. See also [Eliona API](/). "
   license:
     name: MIT License
   title: Eliona Ontology REST API
