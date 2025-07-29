@@ -9,7 +9,7 @@ info:
   license:
     name: MIT License
   title: Ontology REST API for Eliona
-  version: 0.0.1
+  version: 0.0.2
 externalDocs:
   description: Find out more about Eliona App SDK
   url: https://github.com/eliona-smart-building-assistant
