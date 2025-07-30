@@ -4,7 +4,6 @@ get:
   operationId: getOpenAPI
   tags:
     - Version
-  security: []   # No security
   responses:
     200:
       description: Successfully returned the openapi.json file.

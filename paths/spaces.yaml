@@ -1,0 +1,70 @@
+get:
+  summary: Get 'Space' entities.
+  parameters:
+    - $ref: '../parameters/pageParam.yaml'
+    - $ref: '../parameters/sizeParam.yaml'
+    - $ref: '../parameters/sortParam.yaml'
+  responses:
+    400:
+      description: Bad Request
+    500:
+      description: Internal Server Error
+    200:
+      description: An array of 'Space' objects.
+      content:
+        application/ld+json:
+          schema:
+            allOf:
+              - $ref: '../schemas/HydraCollection.yaml'
+              - type: object
+                properties:
+                  hydra:member:
+                    type: array
+                    items:
+                      allOf:
+                        - type: object
+                          required:
+                            - '@context'
+                          properties:
+                            '@context':
+                              $ref: '../schemas/Context.yaml'
+                        - $ref: '../schemas/Space.yaml'
+  tags:
+    - Spaces
+post:
+  summary: Create a new 'Space' object.
+  parameters: []
+  requestBody:
+    description: New 'Space' entity that is to be added.
+    required: true
+    content:
+      application/ld+json:
+        schema:
+          allOf:
+            - type: object
+              required:
+                - '@context'
+              properties:
+                '@context':
+                  $ref: '../schemas/Context.yaml'
+            - $ref: '../schemas/Space.yaml'
+  responses:
+    500:
+      description: Internal Server Error
+    400:
+      description: Bad Request
+    201:
+      description: Entity was successfully created (new representation returned).
+      content:
+        application/ld+json:
+          schema:
+            allOf:
+              - type: object
+                required:
+                  - '@context'
+                properties:
+                  '@context':
+                    $ref: '../schemas/Context.yaml'
+              - $ref: '../schemas/Space.yaml'
+  tags:
+    - Spaces

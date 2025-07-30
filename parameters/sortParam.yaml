@@ -1,0 +1,6 @@
+name: sort
+description: The field and direction to sort results on.
+schema:
+  $ref: '../schemas/Sorting.yaml'
+style: deepObject
+in: query

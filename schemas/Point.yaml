@@ -1,0 +1,35 @@
+type: object
+properties:
+  '@id':
+    type: string
+  '@type':
+    type: string
+    default: dtmi:org:brickschema:schema:Brick:Point;1
+  '@context':
+    type: string
+    default: https://dev.realestatecore.io/contexts/Point.jsonld
+  isPointOf:
+    type: array
+    items:
+      type: object
+      required:
+        - '@id'
+      properties:
+        '@id':
+          type: string
+        '@type':
+          type: string
+  aggregate:
+    type: string
+  customProperties:
+    type: string
+  customTags:
+    type: string
+  hasQuantity:
+    type: string
+  hasSubstance:
+    type: string
+  identifiers:
+    type: string
+  name:
+    type: string

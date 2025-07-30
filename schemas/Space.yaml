@@ -1,0 +1,83 @@
+type: object
+properties:
+  '@id':
+    type: string
+  '@type':
+    type: string
+    default: dtmi:org:w3id:rec:Space;1
+  '@context':
+    type: string
+    default: https://dev.realestatecore.io/contexts/Space.jsonld
+  geometry:
+    type: object
+    required:
+      - '@id'
+    properties:
+      '@id':
+        type: string
+      '@type':
+        type: string
+        default: dtmi:org:w3id:rec:Geometry;1
+  georeference:
+    type: object
+    required:
+      - '@id'
+    properties:
+      '@id':
+        type: string
+      '@type':
+        type: string
+        default: dtmi:org:w3id:rec:Georeference;1
+  hasPart:
+    type: array
+    items:
+      type: object
+      required:
+        - '@id'
+      properties:
+        '@id':
+          type: string
+        '@type':
+          type: string
+          default: dtmi:org:w3id:rec:Space;1
+  isLocationOf:
+    type: array
+    items:
+      type: object
+      required:
+        - '@id'
+      properties:
+        '@id':
+          type: string
+        '@type':
+          type: string
+  isPartOf:
+    type: object
+    required:
+      - '@id'
+    properties:
+      '@id':
+        type: string
+      '@type':
+        type: string
+        default: dtmi:org:w3id:rec:Space;1
+  hasPoint:
+    type: array
+    items:
+      type: object
+      required:
+        - '@id'
+      properties:
+        '@id':
+          type: string
+        '@type':
+          type: string
+          default: dtmi:org:brickschema:schema:Brick:Point;1
+  customProperties:
+    type: string
+  customTags:
+    type: string
+  identifiers:
+    type: string
+  name:
+    type: string

@@ -55,12 +55,6 @@ servers:
         default: localhost:3000
         description: Server of the API
 
-tags:
-  - name: Version
-    description: API version
-    externalDocs:
-      url: https://www.eliona.io
-
 paths:
 
   /version:
@@ -68,3 +62,15 @@ paths:
 
   /version/openapi.json:
     $ref: './paths/version-openapi.yaml'
+
+  /points:
+    $ref: './paths/points.yaml'
+
+  /points/{id}:
+    $ref: './paths/points-id.yaml'
+
+  /spaces:
+    $ref: './paths/spaces.yaml'
+
+  /spaces/{id}:
+    $ref: './paths/spaces-id.yaml'

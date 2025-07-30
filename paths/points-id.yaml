@@ -1,0 +1,140 @@
+get:
+  summary: Get a specific 'Point' object.
+  parameters:
+    - name: id
+      description: Id of 'Point' to return.
+      required: true
+      schema:
+        type: string
+      in: path
+  responses:
+    404:
+      description: An object of type 'Point' with the specified ID was not found.
+    500:
+      description: Internal Server Error
+    200:
+      description: A 'Point' object.
+      content:
+        application/ld+json:
+          schema:
+            allOf:
+              - type: object
+                required:
+                  - '@context'
+                properties:
+                  '@context':
+                    $ref: '../schemas/Context.yaml'
+              - $ref: '../schemas/Point.yaml'
+  tags:
+    - Points
+put:
+  summary: Update an existing 'Point' entity.
+  parameters:
+    - name: id
+      description: Id of 'Point' to update.
+      required: true
+      schema:
+        type: string
+      in: path
+  requestBody:
+    description: Updated data for 'Point' entity.
+    required: true
+    content:
+      application/ld+json:
+        schema:
+          allOf:
+            - type: object
+              required:
+                - '@context'
+              properties:
+                '@context':
+                  $ref: '../schemas/Context.yaml'
+            - $ref: '../schemas/Point.yaml'
+  responses:
+    400:
+      description: Bad Request
+    404:
+      description: An object of type 'Point' with the specified ID was not found.
+    500:
+      description: Internal Server Error
+    200:
+      description: Entity was updated successfully (new representation returned).
+      content:
+        application/ld+json:
+          schema:
+            allOf:
+              - type: object
+                required:
+                  - '@context'
+                properties:
+                  '@context':
+                    $ref: '../schemas/Context.yaml'
+              - $ref: '../schemas/Point.yaml'
+  tags:
+    - Points
+patch:
+  summary: Update a single property on a specific 'Point' object.
+  parameters:
+    - name: id
+      description: Id of 'Point' to update.
+      required: true
+      schema:
+        type: string
+      in: path
+  requestBody:
+    description: A single JSON key-value pair (plus @context), indicating the property to update and its new value. Note that the Swagger UI does not properly show the size constraint on this parameter; but the underlying OpenAPI Specification document does.
+    required: true
+    content:
+      application/ld+json:
+        schema:
+          allOf:
+            - type: object
+              required:
+                - '@context'
+              properties:
+                '@context':
+                  $ref: '../schemas/Context.yaml'
+            - $ref: '../schemas/Point.yaml'
+            - type: object
+              maxProperties: 2
+              minProperties: 2
+  responses:
+    400:
+      description: Bad Request
+    404:
+      description: An object of type 'Point' with the specified ID was not found.
+    500:
+      description: Internal Server Error
+    200:
+      description: Entity was updated successfully (new representation returned).
+      content:
+        application/ld+json:
+          schema:
+            allOf:
+              - type: object
+                required:
+                  - '@context'
+                properties:
+                  '@context':
+                    $ref: '../schemas/Context.yaml'
+              - $ref: '../schemas/Point.yaml'
+  tags:
+    - Points
+delete:
+  summary: Delete a 'Point' object.
+  parameters:
+    - name: id
+      description: Id of 'Point' to delete.
+      required: true
+      schema:
+        type: string
+      in: path
+  responses:
+    404:
+      description: An object of type 'Point' with the specified ID was not found.
+    500:
+      description: Internal Server Error
+    200:
+      description: "'Point' entity was successfully deleted."
+  tags:
+    - Points

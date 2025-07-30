@@ -1,0 +1,13 @@
+type: object
+required:
+  - '@vocab'
+  - '@base'
+  - hydra
+properties:
+  '@base':
+    type: string
+    format: uri
+  hydra:
+    type: string
+    format: uri
+    default: http://www.w3.org/ns/hydra/core#

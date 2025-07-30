@@ -1,0 +1,6 @@
+type: object
+properties:
+  asc:
+    type: string
+  desc:
+    type: string

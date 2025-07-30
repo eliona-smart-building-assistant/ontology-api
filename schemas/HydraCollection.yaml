@@ -1,0 +1,30 @@
+type: object
+required:
+  - '@context'
+  - '@type'
+  - hydra:member
+properties:
+  '@context':
+    $ref: '../schemas/Context.yaml'
+  '@type':
+    type: string
+    default: hydra:Collection
+  hydra:totalItems:
+    type: integer
+  hydra:view:
+    type: object
+    properties:
+      '@id':
+        type: string
+        format: uri
+      '@type':
+        type: string
+        default: hydra:PartialCollectionView
+      hydra:first:
+        type: string
+      hydra:previous:
+        type: string
+      hydra:next:
+        type: string
+      hydra:last:
+        type: string

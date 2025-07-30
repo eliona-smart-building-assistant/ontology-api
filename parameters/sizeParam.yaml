@@ -1,0 +1,9 @@
+name: size
+description: The number of items to display on a returned results page (see the page parameter).
+schema:
+  type: integer
+  format: int32
+  minimum: 0
+  maximum: 100
+  default: 20
+in: query

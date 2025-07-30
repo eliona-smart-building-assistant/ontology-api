@@ -1,0 +1,140 @@
+get:
+  summary: Get a specific 'Space' object.
+  parameters:
+    - name: id
+      description: Id of 'Space' to return.
+      required: true
+      schema:
+        type: string
+      in: path
+  responses:
+    404:
+      description: An object of type 'Space' with the specified ID was not found.
+    500:
+      description: Internal Server Error
+    200:
+      description: A 'Space' object.
+      content:
+        application/ld+json:
+          schema:
+            allOf:
+              - type: object
+                required:
+                  - '@context'
+                properties:
+                  '@context':
+                    $ref: '../schemas/Context.yaml'
+              - $ref: '../schemas/Space.yaml'
+  tags:
+    - Spaces
+put:
+  summary: Update an existing 'Space' entity.
+  parameters:
+    - name: id
+      description: Id of 'Space' to update.
+      required: true
+      schema:
+        type: string
+      in: path
+  requestBody:
+    description: Updated data for 'Space' entity.
+    required: true
+    content:
+      application/ld+json:
+        schema:
+          allOf:
+            - type: object
+              required:
+                - '@context'
+              properties:
+                '@context':
+                  $ref: '../schemas/Context.yaml'
+            - $ref: '../schemas/Space.yaml'
+  responses:
+    400:
+      description: Bad Request
+    404:
+      description: An object of type 'Space' with the specified ID was not found.
+    500:
+      description: Internal Server Error
+    200:
+      description: Entity was updated successfully (new representation returned).
+      content:
+        application/ld+json:
+          schema:
+            allOf:
+              - type: object
+                required:
+                  - '@context'
+                properties:
+                  '@context':
+                    $ref: '../schemas/Context.yaml'
+              - $ref: '../schemas/Space.yaml'
+  tags:
+    - Spaces
+patch:
+  summary: Update a single property on a specific 'Space' object.
+  parameters:
+    - name: id
+      description: Id of 'Space' to update.
+      required: true
+      schema:
+        type: string
+      in: path
+  requestBody:
+    description: A single JSON key-value pair (plus @context), indicating the property to update and its new value. Note that the Swagger UI does not properly show the size constraint on this parameter; but the underlying OpenAPI Specification document does.
+    required: true
+    content:
+      application/ld+json:
+        schema:
+          allOf:
+            - type: object
+              required:
+                - '@context'
+              properties:
+                '@context':
+                  $ref: '../schemas/Context.yaml'
+            - $ref: '../schemas/Space.yaml'
+            - type: object
+              maxProperties: 2
+              minProperties: 2
+  responses:
+    400:
+      description: Bad Request
+    404:
+      description: An object of type 'Space' with the specified ID was not found.
+    500:
+      description: Internal Server Error
+    200:
+      description: Entity was updated successfully (new representation returned).
+      content:
+        application/ld+json:
+          schema:
+            allOf:
+              - type: object
+                required:
+                  - '@context'
+                properties:
+                  '@context':
+                    $ref: '../schemas/Context.yaml'
+              - $ref: '../schemas/Space.yaml'
+  tags:
+    - Spaces
+delete:
+  summary: Delete a 'Space' object.
+  parameters:
+    - name: id
+      description: Id of 'Space' to delete.
+      required: true
+      schema:
+        type: string
+      in: path
+  responses:
+    404:
+      description: An object of type 'Space' with the specified ID was not found.
+    500:
+      description: Internal Server Error
+    200:
+      description: "'Space' entity was successfully deleted."
+  tags:
+    - Spaces
