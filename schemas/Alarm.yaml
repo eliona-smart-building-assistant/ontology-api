@@ -4,10 +4,10 @@ properties:
     type: string
   '@type':
     type: string
-    default: dtmi:org:brickschema:schema:Brick:Point;1
+    default: dtmi:org:brickschema:schema:Brick:Alarm;1
   '@context':
     type: string
-    default: https://dev.realestatecore.io/contexts/Point.jsonld
+    default: https://dev.realestatecore.io/contexts/Alarm.jsonld
   isPointOf:
     type: array
     items:
@@ -20,7 +20,7 @@ properties:
         '@type':
           type: string
   lastKnownValue:
-    $ref: '../schemas/Value.yaml'
+    $ref: '../schemas/ExceptionEvent.yaml'
   aggregate:
     type: string
   customProperties:

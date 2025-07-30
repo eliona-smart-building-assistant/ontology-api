@@ -1,0 +1,39 @@
+type: object
+properties:
+  '@id':
+    type: string
+  '@type':
+    type: string
+    default: dtmi:org:w3id:rec:ExceptionEvent;1
+  '@context':
+    type: string
+    default: https://dev.realestatecore.io/contexts/ExceptionEvent.jsonld
+  sourcePoint:
+    type: object
+    required:
+      - '@id'
+    properties:
+      '@id':
+        type: string
+      '@type':
+        type: string
+        default: dtmi:org:brickschema:schema:Brick:Point;1
+  value:
+    type: string
+  customProperties:
+    type: string
+  customTags:
+    type: string
+  end:
+    type: string
+    format: date-time
+  identifiers:
+    type: string
+  name:
+    type: string
+  start:
+    type: string
+    format: date-time
+  timestamp:
+    type: string
+    format: date-time

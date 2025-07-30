@@ -1,0 +1,140 @@
+get:
+  summary: Get a specific 'Alarm' object.
+  parameters:
+    - name: id
+      description: Id of 'Alarm' to return.
+      required: true
+      schema:
+        type: string
+      in: path
+  responses:
+    404:
+      description: An object of type 'Alarm' with the specified ID was not found.
+    500:
+      description: Internal Server Error
+    200:
+      description: A 'Alarm' object.
+      content:
+        application/ld+json:
+          schema:
+            allOf:
+              - type: object
+                required:
+                  - '@context'
+                properties:
+                  '@context':
+                    $ref: '../schemas/Context.yaml'
+              - $ref: '../schemas/Alarm.yaml'
+  tags:
+    - Alarms
+put:
+  summary: Update an existing 'Alarm' entity.
+  parameters:
+    - name: id
+      description: Id of 'Alarm' to update.
+      required: true
+      schema:
+        type: string
+      in: path
+  requestBody:
+    description: Updated data for 'Alarm' entity.
+    required: true
+    content:
+      application/ld+json:
+        schema:
+          allOf:
+            - type: object
+              required:
+                - '@context'
+              properties:
+                '@context':
+                  $ref: '../schemas/Context.yaml'
+            - $ref: '../schemas/Alarm.yaml'
+  responses:
+    400:
+      description: Bad Request
+    404:
+      description: An object of type 'Alarm' with the specified ID was not found.
+    500:
+      description: Internal Server Error
+    200:
+      description: Entity was updated successfully (new representation returned).
+      content:
+        application/ld+json:
+          schema:
+            allOf:
+              - type: object
+                required:
+                  - '@context'
+                properties:
+                  '@context':
+                    $ref: '../schemas/Context.yaml'
+              - $ref: '../schemas/Alarm.yaml'
+  tags:
+    - Alarms
+patch:
+  summary: Update a single property on a specific 'Alarm' object.
+  parameters:
+    - name: id
+      description: Id of 'Alarm' to update.
+      required: true
+      schema:
+        type: string
+      in: path
+  requestBody:
+    description: A single JSON key-value pair (plus @context), indicating the property to update and its new value. Note that the Swagger UI does not properly show the size constraint on this parameter; but the underlying OpenAPI Specification document does.
+    required: true
+    content:
+      application/ld+json:
+        schema:
+          allOf:
+            - type: object
+              required:
+                - '@context'
+              properties:
+                '@context':
+                  $ref: '../schemas/Context.yaml'
+            - $ref: '../schemas/Alarm.yaml'
+            - type: object
+              maxProperties: 2
+              minProperties: 2
+  responses:
+    400:
+      description: Bad Request
+    404:
+      description: An object of type 'Alarm' with the specified ID was not found.
+    500:
+      description: Internal Server Error
+    200:
+      description: Entity was updated successfully (new representation returned).
+      content:
+        application/ld+json:
+          schema:
+            allOf:
+              - type: object
+                required:
+                  - '@context'
+                properties:
+                  '@context':
+                    $ref: '../schemas/Context.yaml'
+              - $ref: '../schemas/Alarm.yaml'
+  tags:
+    - Alarms
+delete:
+  summary: Delete a 'Alarm' object.
+  parameters:
+    - name: id
+      description: Id of 'Alarm' to delete.
+      required: true
+      schema:
+        type: string
+      in: path
+  responses:
+    404:
+      description: An object of type 'Alarm' with the specified ID was not found.
+    500:
+      description: Internal Server Error
+    200:
+      description: "'Alarm' entity was successfully deleted."
+  tags:
+    - Alarms
