@@ -89,6 +89,7 @@ paths:
           minimum: 0
           type: integer
       - description: The field and direction to sort results on.
+        example: asc
         in: query
         name: sort
         schema:
@@ -96,7 +97,6 @@ paths:
           - asc
           - desc
           type: string
-        style: deepObject
       responses:
         "400":
           description: Bad Request
@@ -266,6 +266,7 @@ paths:
           minimum: 0
           type: integer
       - description: The field and direction to sort results on.
+        example: asc
         in: query
         name: sort
         schema:
@@ -273,7 +274,6 @@ paths:
           - asc
           - desc
           type: string
-        style: deepObject
       responses:
         "400":
           description: Bad Request
@@ -443,6 +443,7 @@ paths:
           minimum: 0
           type: integer
       - description: The field and direction to sort results on.
+        example: asc
         in: query
         name: sort
         schema:
@@ -450,7 +451,6 @@ paths:
           - asc
           - desc
           type: string
-        style: deepObject
       responses:
         "400":
           description: Bad Request
@@ -622,6 +622,7 @@ components:
         type: integer
     sortParam:
       description: The field and direction to sort results on.
+      example: asc
       in: query
       name: sort
       schema:
@@ -629,7 +630,6 @@ components:
         - asc
         - desc
         type: string
-      style: deepObject
   schemas:
     ApiMetadata:
       properties:
