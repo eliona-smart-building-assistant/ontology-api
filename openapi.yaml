@@ -92,7 +92,10 @@ paths:
         in: query
         name: sort
         schema:
-          $ref: "#/components/schemas/Sorting"
+          enum:
+          - asc
+          - desc
+          type: string
         style: deepObject
       responses:
         "400":
@@ -266,7 +269,10 @@ paths:
         in: query
         name: sort
         schema:
-          $ref: "#/components/schemas/Sorting"
+          enum:
+          - asc
+          - desc
+          type: string
         style: deepObject
       responses:
         "400":
@@ -440,7 +446,10 @@ paths:
         in: query
         name: sort
         schema:
-          $ref: "#/components/schemas/Sorting"
+          enum:
+          - asc
+          - desc
+          type: string
         style: deepObject
       responses:
         "400":
@@ -616,7 +625,10 @@ components:
       in: query
       name: sort
       schema:
-        $ref: "#/components/schemas/Sorting"
+        enum:
+        - asc
+        - desc
+        type: string
       style: deepObject
   schemas:
     ApiMetadata:
@@ -635,13 +647,6 @@ components:
           type: string
         timestamp:
           example: 2025-06-25T16:03:33+02:00
-          type: string
-      type: object
-    Sorting:
-      properties:
-        asc:
-          type: string
-        desc:
           type: string
       type: object
     HydraCollection:

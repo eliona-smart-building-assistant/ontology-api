@@ -1,6 +1,9 @@
 name: sort
 description: The field and direction to sort results on.
 schema:
-  $ref: '../schemas/Sorting.yaml'
+  type: string
+  enum:
+    - asc
+    - desc
 style: deepObject
 in: query
