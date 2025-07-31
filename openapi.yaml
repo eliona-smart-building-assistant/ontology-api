@@ -37,16 +37,16 @@ servers:
 paths:
   /version:
     get:
-      description: Gets information about the APIs version.
+      description: Get ontology API version metadata
       operationId: getVersion
       responses:
         "200":
           content:
-            application/json:
+            application/ld+json:
               schema:
-                type: object
+                $ref: "#/components/schemas/ApiMetadata"
           description: Successfully returned the APIs version.
-      summary: Version of the API
+      summary: Version of the ontology API
       tags:
       - Version
   /version/openapi.json:
@@ -619,6 +619,25 @@ components:
         $ref: "#/components/schemas/Sorting"
       style: deepObject
   schemas:
+    ApiMetadata:
+      properties:
+        '@context':
+          default: https://api.eliona.io/contexts/ApiMetadata.jsonld
+          type: string
+        '@type':
+          default: https://api.eliona.io/schema#APIMetadata
+          type: string
+        version:
+          example: 1.0.0
+          type: string
+        commit:
+          example: 3ddb18cd70c796b20472d4df70c125fa174d8aa5
+          type: string
+        timestamp:
+          example: 2025-06-25T16:03:33+02:00
+          format: date-time
+          type: string
+      type: object
     Sorting:
       properties:
         asc:
