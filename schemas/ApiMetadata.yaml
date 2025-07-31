@@ -1,0 +1,18 @@
+type: object
+properties:
+  '@context':
+    type: string
+    default: https://api.eliona.io/contexts/ApiMetadata.jsonld
+  '@type':
+    type: string
+    default: https://api.eliona.io/schema#APIMetadata
+  version:
+    type: string
+    example: "1.0.0"
+  commit:
+    type: string
+    example: "3ddb18cd70c796b20472d4df70c125fa174d8aa5"
+  timestamp:
+    type: string
+    format: date-time
+    example: "2025-06-25T16:03:33+02:00"

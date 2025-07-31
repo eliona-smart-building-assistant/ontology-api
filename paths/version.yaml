@@ -1,6 +1,6 @@
 get:
-  summary: Version of the API
-  description: Gets information about the APIs version.
+  summary: Version of the ontology API
+  description: Get ontology API version metadata
   operationId: getVersion
   tags:
     - Version
@@ -8,6 +8,6 @@ get:
     200:
       description: Successfully returned the APIs version.
       content:
-        application/json:
+        application/ld+json:
           schema:
-            type: object
+            $ref: '../schemas/ApiMetadata.yaml'
