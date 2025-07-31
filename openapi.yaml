@@ -635,7 +635,6 @@ components:
           type: string
         timestamp:
           example: 2025-06-25T16:03:33+02:00
-          format: date-time
           type: string
       type: object
     Sorting:
