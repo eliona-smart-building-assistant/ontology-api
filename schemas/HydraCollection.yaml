@@ -13,6 +13,7 @@ properties:
     type: integer
   hydra:view:
     type: object
+    title: HydraPartialCollectionView
     properties:
       '@id':
         type: string

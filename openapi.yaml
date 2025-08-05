@@ -294,7 +294,7 @@ paths:
         content:
           application/ld+json:
             schema:
-              $ref: "#/components/schemas/_spaces_get_200_response_allOf_hydra_member_inner"
+              $ref: "#/components/schemas/_spaces_post_request"
         description: New 'Space' entity that is to be added.
         required: true
       responses:
@@ -306,7 +306,7 @@ paths:
           content:
             application/ld+json:
               schema:
-                $ref: "#/components/schemas/_spaces_get_200_response_allOf_hydra_member_inner"
+                $ref: "#/components/schemas/_spaces_post_request"
           description: Entity was successfully created (new representation returned).
       summary: Create a new 'Space' object.
       tags:
@@ -347,7 +347,7 @@ paths:
           content:
             application/ld+json:
               schema:
-                $ref: "#/components/schemas/_spaces_get_200_response_allOf_hydra_member_inner"
+                $ref: "#/components/schemas/_spaces_post_request"
           description: A 'Space' object.
       summary: Get a specific 'Space' object.
       tags:
@@ -381,7 +381,7 @@ paths:
           content:
             application/ld+json:
               schema:
-                $ref: "#/components/schemas/_spaces_get_200_response_allOf_hydra_member_inner"
+                $ref: "#/components/schemas/_spaces_post_request"
           description: Entity was updated successfully (new representation returned).
       summary: Update a single property on a specific 'Space' object.
       tags:
@@ -398,7 +398,7 @@ paths:
         content:
           application/ld+json:
             schema:
-              $ref: "#/components/schemas/_spaces_get_200_response_allOf_hydra_member_inner"
+              $ref: "#/components/schemas/_spaces_post_request"
         description: Updated data for 'Space' entity.
         required: true
       responses:
@@ -412,7 +412,7 @@ paths:
           content:
             application/ld+json:
               schema:
-                $ref: "#/components/schemas/_spaces_get_200_response_allOf_hydra_member_inner"
+                $ref: "#/components/schemas/_spaces_post_request"
           description: Entity was updated successfully (new representation returned).
       summary: Update an existing 'Space' entity.
       tags:
@@ -659,7 +659,7 @@ components:
         hydra:totalItems:
           type: integer
         hydra:view:
-          $ref: "#/components/schemas/HydraCollection_hydra_view"
+          $ref: "#/components/schemas/HydraPartialCollectionView"
       required:
       - '@context'
       - '@type'
@@ -733,7 +733,7 @@ components:
             $ref: "#/components/schemas/Point_isPointOf_inner"
           type: array
         isPartOf:
-          $ref: "#/components/schemas/Space_hasPart_inner"
+          $ref: "#/components/schemas/Space_isPartOf"
         hasPoint:
           items:
             $ref: "#/components/schemas/Space_hasPoint_inner"
@@ -850,6 +850,8 @@ components:
         type: object
     _spaces_get_200_response_allOf_hydra_member_inner:
       allOf:
+      - title: SpacesHydraCollection
+        type: object
       - properties:
           '@context':
             $ref: "#/components/schemas/Context"
@@ -866,6 +868,15 @@ components:
               $ref: "#/components/schemas/_spaces_get_200_response_allOf_hydra_member_inner"
             type: array
         type: object
+    _spaces_post_request:
+      allOf:
+      - properties:
+          '@context':
+            $ref: "#/components/schemas/Context"
+        required:
+        - '@context'
+        type: object
+      - $ref: "#/components/schemas/Space"
     _spaces__id__patch_request:
       allOf:
       - properties:
@@ -908,7 +919,7 @@ components:
       - maxProperties: 2
         minProperties: 2
         type: object
-    HydraCollection_hydra_view:
+    HydraPartialCollectionView:
       properties:
         '@id':
           format: uri
@@ -924,6 +935,7 @@ components:
           type: string
         hydra:last:
           type: string
+      title: HydraPartialCollectionView
       type: object
     Point_isPointOf_inner:
       properties:
@@ -935,6 +947,7 @@ components:
       - '@id'
       type: object
     Space_geometry:
+      nullable: true
       properties:
         '@id':
           type: string
@@ -945,6 +958,7 @@ components:
       - '@id'
       type: object
     Space_georeference:
+      nullable: true
       properties:
         '@id':
           type: string
@@ -955,6 +969,17 @@ components:
       - '@id'
       type: object
     Space_hasPart_inner:
+      properties:
+        '@id':
+          type: string
+        '@type':
+          default: dtmi:org:w3id:rec:Space;1
+          type: string
+      required:
+      - '@id'
+      type: object
+    Space_isPartOf:
+      nullable: true
       properties:
         '@id':
           type: string

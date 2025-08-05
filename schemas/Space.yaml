@@ -10,6 +10,7 @@ properties:
     default: https://dev.realestatecore.io/contexts/Space.jsonld
   geometry:
     type: object
+    nullable: true
     required:
       - '@id'
     properties:
@@ -20,6 +21,7 @@ properties:
         default: dtmi:org:w3id:rec:Geometry;1
   georeference:
     type: object
+    nullable: true
     required:
       - '@id'
     properties:
@@ -53,6 +55,7 @@ properties:
           type: string
   isPartOf:
     type: object
+    nullable: true
     required:
       - '@id'
     properties:

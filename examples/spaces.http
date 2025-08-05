@@ -1,0 +1,2 @@
+### [Spaces] List all spaces (read-only)
+GET {{api-server}}/v1/spaces HTTP/1.1
