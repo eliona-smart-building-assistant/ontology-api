@@ -21,15 +21,7 @@ get:
                   hydra:member:
                     type: array
                     items:
-                      allOf:
-                        - title: SpacesHydraCollection
-                        - type: object
-                          required:
-                            - '@context'
-                          properties:
-                            '@context':
-                              $ref: '../schemas/Context.yaml'
-                        - $ref: '../schemas/Space.yaml'
+                      $ref: '../schemas/Space.yaml'
   tags:
     - Spaces
 post:
