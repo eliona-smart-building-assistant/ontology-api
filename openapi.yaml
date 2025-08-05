@@ -117,7 +117,7 @@ paths:
         content:
           application/ld+json:
             schema:
-              $ref: "#/components/schemas/_points_get_200_response_allOf_hydra_member_inner"
+              $ref: "#/components/schemas/_points_get_200_response_allOf_member_inner"
         description: New 'Point' entity that is to be added.
         required: true
       responses:
@@ -129,7 +129,7 @@ paths:
           content:
             application/ld+json:
               schema:
-                $ref: "#/components/schemas/_points_get_200_response_allOf_hydra_member_inner"
+                $ref: "#/components/schemas/_points_get_200_response_allOf_member_inner"
           description: Entity was successfully created (new representation returned).
       summary: Create a new 'Point' object.
       tags:
@@ -170,7 +170,7 @@ paths:
           content:
             application/ld+json:
               schema:
-                $ref: "#/components/schemas/_points_get_200_response_allOf_hydra_member_inner"
+                $ref: "#/components/schemas/_points_get_200_response_allOf_member_inner"
           description: A 'Point' object.
       summary: Get a specific 'Point' object.
       tags:
@@ -204,7 +204,7 @@ paths:
           content:
             application/ld+json:
               schema:
-                $ref: "#/components/schemas/_points_get_200_response_allOf_hydra_member_inner"
+                $ref: "#/components/schemas/_points_get_200_response_allOf_member_inner"
           description: Entity was updated successfully (new representation returned).
       summary: Update a single property on a specific 'Point' object.
       tags:
@@ -221,7 +221,7 @@ paths:
         content:
           application/ld+json:
             schema:
-              $ref: "#/components/schemas/_points_get_200_response_allOf_hydra_member_inner"
+              $ref: "#/components/schemas/_points_get_200_response_allOf_member_inner"
         description: Updated data for 'Point' entity.
         required: true
       responses:
@@ -235,7 +235,7 @@ paths:
           content:
             application/ld+json:
               schema:
-                $ref: "#/components/schemas/_points_get_200_response_allOf_hydra_member_inner"
+                $ref: "#/components/schemas/_points_get_200_response_allOf_member_inner"
           description: Entity was updated successfully (new representation returned).
       summary: Update an existing 'Point' entity.
       tags:
@@ -294,7 +294,7 @@ paths:
         content:
           application/ld+json:
             schema:
-              $ref: "#/components/schemas/Space"
+              $ref: "#/components/schemas/_spaces_post_request"
         description: New 'Space' entity that is to be added.
         required: true
       responses:
@@ -306,7 +306,7 @@ paths:
           content:
             application/ld+json:
               schema:
-                $ref: "#/components/schemas/Space"
+                $ref: "#/components/schemas/_spaces_post_request"
           description: Entity was successfully created (new representation returned).
       summary: Create a new 'Space' object.
       tags:
@@ -347,7 +347,7 @@ paths:
           content:
             application/ld+json:
               schema:
-                $ref: "#/components/schemas/Space"
+                $ref: "#/components/schemas/_spaces_post_request"
           description: A 'Space' object.
       summary: Get a specific 'Space' object.
       tags:
@@ -381,7 +381,7 @@ paths:
           content:
             application/ld+json:
               schema:
-                $ref: "#/components/schemas/Space"
+                $ref: "#/components/schemas/_spaces_post_request"
           description: Entity was updated successfully (new representation returned).
       summary: Update a single property on a specific 'Space' object.
       tags:
@@ -398,7 +398,7 @@ paths:
         content:
           application/ld+json:
             schema:
-              $ref: "#/components/schemas/Space"
+              $ref: "#/components/schemas/_spaces_post_request"
         description: Updated data for 'Space' entity.
         required: true
       responses:
@@ -412,7 +412,7 @@ paths:
           content:
             application/ld+json:
               schema:
-                $ref: "#/components/schemas/Space"
+                $ref: "#/components/schemas/_spaces_post_request"
           description: Entity was updated successfully (new representation returned).
       summary: Update an existing 'Space' entity.
       tags:
@@ -471,7 +471,7 @@ paths:
         content:
           application/ld+json:
             schema:
-              $ref: "#/components/schemas/_alarms_get_200_response_allOf_hydra_member_inner"
+              $ref: "#/components/schemas/_alarms_get_200_response_allOf_member_inner"
         description: New 'Alarm' entity that is to be added.
         required: true
       responses:
@@ -483,7 +483,7 @@ paths:
           content:
             application/ld+json:
               schema:
-                $ref: "#/components/schemas/_alarms_get_200_response_allOf_hydra_member_inner"
+                $ref: "#/components/schemas/_alarms_get_200_response_allOf_member_inner"
           description: Entity was successfully created (new representation returned).
       summary: Create a new 'Alarm' object.
       tags:
@@ -524,7 +524,7 @@ paths:
           content:
             application/ld+json:
               schema:
-                $ref: "#/components/schemas/_alarms_get_200_response_allOf_hydra_member_inner"
+                $ref: "#/components/schemas/_alarms_get_200_response_allOf_member_inner"
           description: A 'Alarm' object.
       summary: Get a specific 'Alarm' object.
       tags:
@@ -558,7 +558,7 @@ paths:
           content:
             application/ld+json:
               schema:
-                $ref: "#/components/schemas/_alarms_get_200_response_allOf_hydra_member_inner"
+                $ref: "#/components/schemas/_alarms_get_200_response_allOf_member_inner"
           description: Entity was updated successfully (new representation returned).
       summary: Update a single property on a specific 'Alarm' object.
       tags:
@@ -575,7 +575,7 @@ paths:
         content:
           application/ld+json:
             schema:
-              $ref: "#/components/schemas/_alarms_get_200_response_allOf_hydra_member_inner"
+              $ref: "#/components/schemas/_alarms_get_200_response_allOf_member_inner"
         description: Updated data for 'Alarm' entity.
         required: true
       responses:
@@ -589,7 +589,7 @@ paths:
           content:
             application/ld+json:
               schema:
-                $ref: "#/components/schemas/_alarms_get_200_response_allOf_hydra_member_inner"
+                $ref: "#/components/schemas/_alarms_get_200_response_allOf_member_inner"
           description: Entity was updated successfully (new representation returned).
       summary: Update an existing 'Alarm' entity.
       tags:
@@ -652,33 +652,23 @@ components:
     HydraCollection:
       properties:
         '@context':
-          $ref: "#/components/schemas/HydraContext"
+          $ref: "#/components/schemas/Context"
         '@type':
-          default: hydra:Collection
+          default: Collection
           type: string
-        hydra:totalItems:
+        totalItems:
           type: integer
-        hydra:view:
+        view:
           $ref: "#/components/schemas/HydraPartialCollectionView"
       required:
       - '@context'
       - '@type'
-      - hydra:member
+      - member
       type: object
-    HydraContext:
-      properties:
-        '@base':
-          format: uri
-          nullable: true
-          type: string
-        hydra:
-          default: http://www.w3.org/ns/hydra/core#
-          format: uri
-          type: string
-      required:
-      - '@base'
-      - '@vocab'
-      - hydra
+    Context:
+      oneOf:
+      - type: string
+      - $ref: "#/components/schemas/Context_oneOf"
       type: object
     Point:
       properties:
@@ -819,11 +809,11 @@ components:
           format: date-time
           type: string
       type: object
-    _points_get_200_response_allOf_hydra_member_inner:
+    _points_get_200_response_allOf_member_inner:
       allOf:
       - properties:
           '@context':
-            $ref: "#/components/schemas/HydraContext"
+            $ref: "#/components/schemas/Context"
         required:
         - '@context'
         type: object
@@ -832,16 +822,16 @@ components:
       allOf:
       - $ref: "#/components/schemas/HydraCollection"
       - properties:
-          hydra:member:
+          member:
             items:
-              $ref: "#/components/schemas/_points_get_200_response_allOf_hydra_member_inner"
+              $ref: "#/components/schemas/_points_get_200_response_allOf_member_inner"
             type: array
         type: object
     _points__id__patch_request:
       allOf:
       - properties:
           '@context':
-            $ref: "#/components/schemas/HydraContext"
+            $ref: "#/components/schemas/Context"
         required:
         - '@context'
         type: object
@@ -853,24 +843,37 @@ components:
       allOf:
       - $ref: "#/components/schemas/HydraCollection"
       - properties:
-          hydra:member:
+          member:
             items:
               $ref: "#/components/schemas/Space"
             type: array
         type: object
+    _spaces_post_request:
+      allOf:
+      - properties:
+          '@context':
+            $ref: "#/components/schemas/Context"
+        required:
+        - '@context'
+        type: object
+      - $ref: "#/components/schemas/Space"
     _spaces__id__patch_request:
       allOf:
-      - title: SpaceProperties
+      - properties:
+          '@context':
+            $ref: "#/components/schemas/Context"
+        required:
+        - '@context'
         type: object
       - $ref: "#/components/schemas/Space"
       - maxProperties: 2
         minProperties: 2
         type: object
-    _alarms_get_200_response_allOf_hydra_member_inner:
+    _alarms_get_200_response_allOf_member_inner:
       allOf:
       - properties:
           '@context':
-            $ref: "#/components/schemas/HydraContext"
+            $ref: "#/components/schemas/Context"
         required:
         - '@context'
         type: object
@@ -879,16 +882,16 @@ components:
       allOf:
       - $ref: "#/components/schemas/HydraCollection"
       - properties:
-          hydra:member:
+          member:
             items:
-              $ref: "#/components/schemas/_alarms_get_200_response_allOf_hydra_member_inner"
+              $ref: "#/components/schemas/_alarms_get_200_response_allOf_member_inner"
             type: array
         type: object
     _alarms__id__patch_request:
       allOf:
       - properties:
           '@context':
-            $ref: "#/components/schemas/HydraContext"
+            $ref: "#/components/schemas/Context"
         required:
         - '@context'
         type: object
@@ -902,17 +905,25 @@ components:
           format: uri
           type: string
         '@type':
-          default: hydra:PartialCollectionView
+          default: PartialCollectionView
           type: string
-        hydra:first:
+        first:
           type: string
-        hydra:previous:
+        previous:
           type: string
-        hydra:next:
+        next:
           type: string
-        hydra:last:
+        last:
           type: string
       title: HydraPartialCollectionView
+      type: object
+    Context_oneOf:
+      additionalProperties:
+        type: string
+      properties:
+        '@base':
+          nullable: true
+          type: string
       type: object
     Point_isPointOf_inner:
       properties:

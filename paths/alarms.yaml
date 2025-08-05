@@ -18,7 +18,7 @@ get:
               - $ref: '../schemas/HydraCollection.yaml'
               - type: object
                 properties:
-                  hydra:member:
+                  member:
                     type: array
                     items:
                       allOf:
@@ -27,7 +27,7 @@ get:
                             - '@context'
                           properties:
                             '@context':
-                              $ref: '../schemas/HydraContext.yaml'
+                              $ref: '../schemas/Context.yaml'
                         - $ref: '../schemas/Alarm.yaml'
   tags:
     - Alarms
@@ -46,7 +46,7 @@ post:
                 - '@context'
               properties:
                 '@context':
-                  $ref: '../schemas/HydraContext.yaml'
+                  $ref: '../schemas/Context.yaml'
             - $ref: '../schemas/Alarm.yaml'
   responses:
     500:
@@ -64,7 +64,7 @@ post:
                   - '@context'
                 properties:
                   '@context':
-                    $ref: '../schemas/HydraContext.yaml'
+                    $ref: '../schemas/Context.yaml'
               - $ref: '../schemas/Alarm.yaml'
   tags:
     - Alarms
