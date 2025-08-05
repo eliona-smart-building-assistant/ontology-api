@@ -23,7 +23,7 @@ get:
                   - '@context'
                 properties:
                   '@context':
-                    $ref: '../schemas/Context.yaml'
+                    $ref: '../schemas/HydraContext.yaml'
               - $ref: '../schemas/Alarm.yaml'
   tags:
     - Alarms
@@ -48,7 +48,7 @@ put:
                 - '@context'
               properties:
                 '@context':
-                  $ref: '../schemas/Context.yaml'
+                  $ref: '../schemas/HydraContext.yaml'
             - $ref: '../schemas/Alarm.yaml'
   responses:
     400:
@@ -68,7 +68,7 @@ put:
                   - '@context'
                 properties:
                   '@context':
-                    $ref: '../schemas/Context.yaml'
+                    $ref: '../schemas/HydraContext.yaml'
               - $ref: '../schemas/Alarm.yaml'
   tags:
     - Alarms
@@ -93,7 +93,7 @@ patch:
                 - '@context'
               properties:
                 '@context':
-                  $ref: '../schemas/Context.yaml'
+                  $ref: '../schemas/HydraContext.yaml'
             - $ref: '../schemas/Alarm.yaml'
             - type: object
               maxProperties: 2
@@ -116,7 +116,7 @@ patch:
                   - '@context'
                 properties:
                   '@context':
-                    $ref: '../schemas/Context.yaml'
+                    $ref: '../schemas/HydraContext.yaml'
               - $ref: '../schemas/Alarm.yaml'
   tags:
     - Alarms

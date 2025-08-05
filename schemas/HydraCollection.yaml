@@ -5,7 +5,7 @@ required:
   - hydra:member
 properties:
   '@context':
-    $ref: '../schemas/Context.yaml'
+    $ref: '../schemas/HydraContext.yaml'
   '@type':
     type: string
     default: hydra:Collection

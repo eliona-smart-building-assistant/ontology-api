@@ -652,7 +652,7 @@ components:
     HydraCollection:
       properties:
         '@context':
-          $ref: "#/components/schemas/Context"
+          $ref: "#/components/schemas/HydraContext"
         '@type':
           default: hydra:Collection
           type: string
@@ -665,10 +665,11 @@ components:
       - '@type'
       - hydra:member
       type: object
-    Context:
+    HydraContext:
       properties:
         '@base':
           format: uri
+          nullable: true
           type: string
         hydra:
           default: http://www.w3.org/ns/hydra/core#
@@ -822,7 +823,7 @@ components:
       allOf:
       - properties:
           '@context':
-            $ref: "#/components/schemas/Context"
+            $ref: "#/components/schemas/HydraContext"
         required:
         - '@context'
         type: object
@@ -840,7 +841,7 @@ components:
       allOf:
       - properties:
           '@context':
-            $ref: "#/components/schemas/Context"
+            $ref: "#/components/schemas/HydraContext"
         required:
         - '@context'
         type: object
@@ -861,7 +862,7 @@ components:
       allOf:
       - properties:
           '@context':
-            $ref: "#/components/schemas/Context"
+            $ref: "#/components/schemas/HydraContext"
         required:
         - '@context'
         type: object
@@ -870,7 +871,7 @@ components:
       allOf:
       - properties:
           '@context':
-            $ref: "#/components/schemas/Context"
+            $ref: "#/components/schemas/HydraContext"
         required:
         - '@context'
         type: object
@@ -882,7 +883,7 @@ components:
       allOf:
       - properties:
           '@context':
-            $ref: "#/components/schemas/Context"
+            $ref: "#/components/schemas/HydraContext"
         required:
         - '@context'
         type: object
@@ -900,7 +901,7 @@ components:
       allOf:
       - properties:
           '@context':
-            $ref: "#/components/schemas/Context"
+            $ref: "#/components/schemas/HydraContext"
         required:
         - '@context'
         type: object

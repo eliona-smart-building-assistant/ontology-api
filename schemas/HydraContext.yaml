@@ -7,6 +7,7 @@ properties:
   '@base':
     type: string
     format: uri
+    nullable: true
   hydra:
     type: string
     format: uri

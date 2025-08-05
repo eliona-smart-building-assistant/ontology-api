@@ -39,7 +39,7 @@ post:
                 - '@context'
               properties:
                 '@context':
-                  $ref: '../schemas/Context.yaml'
+                  $ref: '../schemas/HydraContext.yaml'
             - $ref: '../schemas/Space.yaml'
   responses:
     500:
@@ -57,7 +57,7 @@ post:
                   - '@context'
                 properties:
                   '@context':
-                    $ref: '../schemas/Context.yaml'
+                    $ref: '../schemas/HydraContext.yaml'
               - $ref: '../schemas/Space.yaml'
   tags:
     - Spaces
