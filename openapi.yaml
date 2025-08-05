@@ -848,24 +848,13 @@ components:
       - maxProperties: 2
         minProperties: 2
         type: object
-    _spaces_get_200_response_allOf_hydra_member_inner:
-      allOf:
-      - title: SpacesHydraCollection
-        type: object
-      - properties:
-          '@context':
-            $ref: "#/components/schemas/Context"
-        required:
-        - '@context'
-        type: object
-      - $ref: "#/components/schemas/Space"
     _spaces_get_200_response:
       allOf:
       - $ref: "#/components/schemas/HydraCollection"
       - properties:
           hydra:member:
             items:
-              $ref: "#/components/schemas/_spaces_get_200_response_allOf_hydra_member_inner"
+              $ref: "#/components/schemas/Space"
             type: array
         type: object
     _spaces_post_request:
