@@ -17,14 +17,7 @@ get:
       content:
         application/ld+json:
           schema:
-            allOf:
-              - type: object
-                required:
-                  - '@context'
-                properties:
-                  '@context':
-                    $ref: '../schemas/HydraContext.yaml'
-              - $ref: '../schemas/Space.yaml'
+            $ref: '../schemas/Space.yaml'
   tags:
     - Spaces
 put:
@@ -42,14 +35,7 @@ put:
     content:
       application/ld+json:
         schema:
-          allOf:
-            - type: object
-              required:
-                - '@context'
-              properties:
-                '@context':
-                  $ref: '../schemas/HydraContext.yaml'
-            - $ref: '../schemas/Space.yaml'
+          $ref: '../schemas/Space.yaml'
   responses:
     400:
       description: Bad Request
@@ -62,14 +48,7 @@ put:
       content:
         application/ld+json:
           schema:
-            allOf:
-              - type: object
-                required:
-                  - '@context'
-                properties:
-                  '@context':
-                    $ref: '../schemas/HydraContext.yaml'
-              - $ref: '../schemas/Space.yaml'
+            $ref: '../schemas/Space.yaml'
   tags:
     - Spaces
 patch:
@@ -88,12 +67,7 @@ patch:
       application/ld+json:
         schema:
           allOf:
-            - type: object
-              required:
-                - '@context'
-              properties:
-                '@context':
-                  $ref: '../schemas/HydraContext.yaml'
+            - title: SpaceProperties
             - $ref: '../schemas/Space.yaml'
             - type: object
               maxProperties: 2
@@ -110,14 +84,7 @@ patch:
       content:
         application/ld+json:
           schema:
-            allOf:
-              - type: object
-                required:
-                  - '@context'
-                properties:
-                  '@context':
-                    $ref: '../schemas/HydraContext.yaml'
-              - $ref: '../schemas/Space.yaml'
+            $ref: '../schemas/Space.yaml'
   tags:
     - Spaces
 delete:

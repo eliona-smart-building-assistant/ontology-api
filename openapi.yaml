@@ -294,7 +294,7 @@ paths:
         content:
           application/ld+json:
             schema:
-              $ref: "#/components/schemas/_spaces_post_request"
+              $ref: "#/components/schemas/Space"
         description: New 'Space' entity that is to be added.
         required: true
       responses:
@@ -306,7 +306,7 @@ paths:
           content:
             application/ld+json:
               schema:
-                $ref: "#/components/schemas/_spaces_post_request"
+                $ref: "#/components/schemas/Space"
           description: Entity was successfully created (new representation returned).
       summary: Create a new 'Space' object.
       tags:
@@ -347,7 +347,7 @@ paths:
           content:
             application/ld+json:
               schema:
-                $ref: "#/components/schemas/_spaces_post_request"
+                $ref: "#/components/schemas/Space"
           description: A 'Space' object.
       summary: Get a specific 'Space' object.
       tags:
@@ -381,7 +381,7 @@ paths:
           content:
             application/ld+json:
               schema:
-                $ref: "#/components/schemas/_spaces_post_request"
+                $ref: "#/components/schemas/Space"
           description: Entity was updated successfully (new representation returned).
       summary: Update a single property on a specific 'Space' object.
       tags:
@@ -398,7 +398,7 @@ paths:
         content:
           application/ld+json:
             schema:
-              $ref: "#/components/schemas/_spaces_post_request"
+              $ref: "#/components/schemas/Space"
         description: Updated data for 'Space' entity.
         required: true
       responses:
@@ -412,7 +412,7 @@ paths:
           content:
             application/ld+json:
               schema:
-                $ref: "#/components/schemas/_spaces_post_request"
+                $ref: "#/components/schemas/Space"
           description: Entity was updated successfully (new representation returned).
       summary: Update an existing 'Space' entity.
       tags:
@@ -858,22 +858,9 @@ components:
               $ref: "#/components/schemas/Space"
             type: array
         type: object
-    _spaces_post_request:
-      allOf:
-      - properties:
-          '@context':
-            $ref: "#/components/schemas/HydraContext"
-        required:
-        - '@context'
-        type: object
-      - $ref: "#/components/schemas/Space"
     _spaces__id__patch_request:
       allOf:
-      - properties:
-          '@context':
-            $ref: "#/components/schemas/HydraContext"
-        required:
-        - '@context'
+      - title: SpaceProperties
         type: object
       - $ref: "#/components/schemas/Space"
       - maxProperties: 2
