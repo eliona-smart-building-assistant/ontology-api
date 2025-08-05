@@ -17,14 +17,7 @@ get:
       content:
         application/ld+json:
           schema:
-            allOf:
-              - type: object
-                required:
-                  - '@context'
-                properties:
-                  '@context':
-                    $ref: '../schemas/Context.yaml'
-              - $ref: '../schemas/Alarm.yaml'
+            $ref: '../schemas/Alarm.yaml'
   tags:
     - Alarms
 put:
@@ -42,14 +35,7 @@ put:
     content:
       application/ld+json:
         schema:
-          allOf:
-            - type: object
-              required:
-                - '@context'
-              properties:
-                '@context':
-                  $ref: '../schemas/Context.yaml'
-            - $ref: '../schemas/Alarm.yaml'
+          $ref: '../schemas/Alarm.yaml'
   responses:
     400:
       description: Bad Request
@@ -62,14 +48,7 @@ put:
       content:
         application/ld+json:
           schema:
-            allOf:
-              - type: object
-                required:
-                  - '@context'
-                properties:
-                  '@context':
-                    $ref: '../schemas/Context.yaml'
-              - $ref: '../schemas/Alarm.yaml'
+            $ref: '../schemas/Alarm.yaml'
   tags:
     - Alarms
 patch:
@@ -88,12 +67,6 @@ patch:
       application/ld+json:
         schema:
           allOf:
-            - type: object
-              required:
-                - '@context'
-              properties:
-                '@context':
-                  $ref: '../schemas/Context.yaml'
             - $ref: '../schemas/Alarm.yaml'
             - type: object
               maxProperties: 2
@@ -110,14 +83,7 @@ patch:
       content:
         application/ld+json:
           schema:
-            allOf:
-              - type: object
-                required:
-                  - '@context'
-                properties:
-                  '@context':
-                    $ref: '../schemas/Context.yaml'
-              - $ref: '../schemas/Alarm.yaml'
+            $ref: '../schemas/Alarm.yaml'
   tags:
     - Alarms
 delete:

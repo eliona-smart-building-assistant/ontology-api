@@ -2,18 +2,29 @@ type: object
 required:
   - '@context'
   - '@type'
-  - member
+  - hydra:member
 properties:
   '@context':
-    $ref: '../schemas/Context.yaml'
+    type: object
+    required:
+      - hydra
+    properties:
+      '@base':
+        type: string
+        format: uri
+        nullable: true
+      hydra:
+        type: string
+        format: uri
+        default: http://www.w3.org/ns/hydra/core#
   '@type':
     type: string
-    default: Collection
-  totalItems:
+    default: hydra:Collection
+  hydra:totalItems:
     type: integer
-  view:
+  hydra:view:
     type: object
-    title: HydraPartialCollectionView
+    title: hydra:HydraPartialCollectionView
     properties:
       '@id':
         type: string
@@ -21,11 +32,11 @@ properties:
       '@type':
         type: string
         default: PartialCollectionView
-      first:
+      hydra:first:
         type: string
-      previous:
+      hydra:previous:
         type: string
-      next:
+      hydra:next:
         type: string
-      last:
+      hydra:last:
         type: string

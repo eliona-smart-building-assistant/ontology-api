@@ -18,7 +18,7 @@ get:
               - $ref: '../schemas/HydraCollection.yaml'
               - type: object
                 properties:
-                  member:
+                  hydra:member:
                     type: array
                     items:
                       $ref: '../schemas/Space.yaml'
@@ -33,14 +33,7 @@ post:
     content:
       application/ld+json:
         schema:
-          allOf:
-            - type: object
-              required:
-                - '@context'
-              properties:
-                '@context':
-                  $ref: '../schemas/Context.yaml'
-            - $ref: '../schemas/Space.yaml'
+          $ref: '../schemas/Space.yaml'
   responses:
     500:
       description: Internal Server Error
@@ -51,13 +44,6 @@ post:
       content:
         application/ld+json:
           schema:
-            allOf:
-              - type: object
-                required:
-                  - '@context'
-                properties:
-                  '@context':
-                    $ref: '../schemas/Context.yaml'
-              - $ref: '../schemas/Space.yaml'
+            $ref: '../schemas/Space.yaml'
   tags:
     - Spaces
