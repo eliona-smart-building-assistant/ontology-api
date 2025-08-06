@@ -14,16 +14,19 @@ properties:
     $ref: "IdType.yaml"
   hasPart:
     type: array
+    nullable: true
     items:
       $ref: "IdType.yaml"
   isLocationOf:
     type: array
+    nullable: true
     items:
       $ref: "IdType.yaml"
   isPartOf:
     $ref: "IdType.yaml"
   hasPoint:
     type: array
+    nullable: true
     items:
       $ref: "IdType.yaml"
   customProperties:

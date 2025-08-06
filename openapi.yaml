@@ -713,16 +713,19 @@ components:
         hasPart:
           items:
             $ref: "#/components/schemas/IdType"
+          nullable: true
           type: array
         isLocationOf:
           items:
             $ref: "#/components/schemas/IdType"
+          nullable: true
           type: array
         isPartOf:
           $ref: "#/components/schemas/IdType"
         hasPoint:
           items:
             $ref: "#/components/schemas/IdType"
+          nullable: true
           type: array
         customProperties:
           additionalProperties:
