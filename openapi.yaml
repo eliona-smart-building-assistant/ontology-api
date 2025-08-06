@@ -707,22 +707,22 @@ components:
           default: https://dev.realestatecore.io/contexts/Space.jsonld
           type: string
         geometry:
-          $ref: "#/components/schemas/Space_geometry"
+          $ref: "#/components/schemas/IdType"
         georeference:
-          $ref: "#/components/schemas/Space_georeference"
+          $ref: "#/components/schemas/IdType"
         hasPart:
           items:
-            $ref: "#/components/schemas/Space_hasPart_inner"
+            $ref: "#/components/schemas/IdType"
           type: array
         isLocationOf:
           items:
-            $ref: "#/components/schemas/Point_isPointOf_inner"
+            $ref: "#/components/schemas/IdType"
           type: array
         isPartOf:
-          $ref: "#/components/schemas/Space_isPartOf"
+          $ref: "#/components/schemas/IdType"
         hasPoint:
           items:
-            $ref: "#/components/schemas/Space_hasPoint_inner"
+            $ref: "#/components/schemas/IdType"
           type: array
         customProperties:
           additionalProperties:
@@ -780,6 +780,15 @@ components:
           format: date-time
           type: string
       type: object
+    IdType:
+      properties:
+        '@id':
+          type: string
+        '@type':
+          type: string
+      required:
+      - '@id'
+      type: object
     CustomProperties:
       additionalProperties:
         additionalProperties:
@@ -805,7 +814,7 @@ components:
           default: https://dev.realestatecore.io/contexts/ExceptionEvent.jsonld
           type: string
         sourcePoint:
-          $ref: "#/components/schemas/Space_hasPoint_inner"
+          $ref: "#/components/schemas/ExceptionEvent_sourcePoint"
         value:
           type: string
         customProperties:
@@ -911,50 +920,7 @@ components:
       required:
       - '@id'
       type: object
-    Space_geometry:
-      nullable: true
-      properties:
-        '@id':
-          type: string
-        '@type':
-          default: dtmi:org:w3id:rec:Geometry;1
-          type: string
-      required:
-      - '@id'
-      type: object
-    Space_georeference:
-      nullable: true
-      properties:
-        '@id':
-          type: string
-        '@type':
-          default: dtmi:org:w3id:rec:Georeference;1
-          type: string
-      required:
-      - '@id'
-      type: object
-    Space_hasPart_inner:
-      properties:
-        '@id':
-          type: string
-        '@type':
-          default: dtmi:org:w3id:rec:Space;1
-          type: string
-      required:
-      - '@id'
-      type: object
-    Space_isPartOf:
-      nullable: true
-      properties:
-        '@id':
-          type: string
-        '@type':
-          default: dtmi:org:w3id:rec:Space;1
-          type: string
-      required:
-      - '@id'
-      type: object
-    Space_hasPoint_inner:
+    ExceptionEvent_sourcePoint:
       properties:
         '@id':
           type: string

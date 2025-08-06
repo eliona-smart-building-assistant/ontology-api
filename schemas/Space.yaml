@@ -9,73 +9,23 @@ properties:
     type: string
     default: https://dev.realestatecore.io/contexts/Space.jsonld
   geometry:
-    type: object
-    nullable: true
-    required:
-      - '@id'
-    properties:
-      '@id':
-        type: string
-      '@type':
-        type: string
-        default: dtmi:org:w3id:rec:Geometry;1
+    $ref: "IdType.yaml"
   georeference:
-    type: object
-    nullable: true
-    required:
-      - '@id'
-    properties:
-      '@id':
-        type: string
-      '@type':
-        type: string
-        default: dtmi:org:w3id:rec:Georeference;1
+    $ref: "IdType.yaml"
   hasPart:
     type: array
     items:
-      type: object
-      required:
-        - '@id'
-      properties:
-        '@id':
-          type: string
-        '@type':
-          type: string
-          default: dtmi:org:w3id:rec:Space;1
+      $ref: "IdType.yaml"
   isLocationOf:
     type: array
     items:
-      type: object
-      required:
-        - '@id'
-      properties:
-        '@id':
-          type: string
-        '@type':
-          type: string
+      $ref: "IdType.yaml"
   isPartOf:
-    type: object
-    nullable: true
-    required:
-      - '@id'
-    properties:
-      '@id':
-        type: string
-      '@type':
-        type: string
-        default: dtmi:org:w3id:rec:Space;1
+    $ref: "IdType.yaml"
   hasPoint:
     type: array
     items:
-      type: object
-      required:
-        - '@id'
-      properties:
-        '@id':
-          type: string
-        '@type':
-          type: string
-          default: dtmi:org:brickschema:schema:Brick:Point;1
+      $ref: "IdType.yaml"
   customProperties:
     $ref: 'CustomProperties.yaml'
   customTags:
