@@ -39,6 +39,8 @@ post:
       description: Internal Server Error
     400:
       description: Bad Request
+    409:
+      description: Object already exists
     201:
       description: Entity was successfully created (new representation returned).
       content:
