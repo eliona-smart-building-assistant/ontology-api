@@ -781,6 +781,7 @@ components:
           type: string
       type: object
     IdType:
+      nullable: true
       properties:
         '@id':
           type: string
