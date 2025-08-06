@@ -77,10 +77,10 @@ properties:
           type: string
           default: dtmi:org:brickschema:schema:Brick:Point;1
   customProperties:
-    type: string
+    $ref: 'CustomProperties.yaml'
   customTags:
-    type: string
+    $ref: 'CustomTags.yaml'
   identifiers:
-    type: string
+    $ref: 'Identifiers.yaml'
   name:
     type: string

@@ -725,11 +725,21 @@ components:
             $ref: "#/components/schemas/Space_hasPoint_inner"
           type: array
         customProperties:
-          type: string
+          additionalProperties:
+            additionalProperties:
+              type: string
+            type: object
+          type: object
         customTags:
-          type: string
+          additionalProperties:
+            description: //TODO automatically added by openapi-generator due to undefined
+              type
+            type: string
+          type: object
         identifiers:
-          type: string
+          additionalProperties:
+            type: string
+          type: object
         name:
           type: string
       type: object
@@ -771,6 +781,22 @@ components:
         timestamp:
           format: date-time
           type: string
+      type: object
+    CustomProperties:
+      additionalProperties:
+        additionalProperties:
+          type: string
+        type: object
+      type: object
+    CustomTags:
+      additionalProperties:
+        description: //TODO automatically added by openapi-generator due to undefined
+          type
+        type: string
+      type: object
+    Identifiers:
+      additionalProperties:
+        type: string
       type: object
     ExceptionEvent:
       properties:
