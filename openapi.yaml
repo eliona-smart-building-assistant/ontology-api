@@ -732,9 +732,7 @@ components:
           type: object
         customTags:
           additionalProperties:
-            description: //TODO automatically added by openapi-generator due to undefined
-              type
-            type: string
+            type: boolean
           type: object
         identifiers:
           additionalProperties:
@@ -790,9 +788,7 @@ components:
       type: object
     CustomTags:
       additionalProperties:
-        description: //TODO automatically added by openapi-generator due to undefined
-          type
-        type: string
+        type: boolean
       type: object
     Identifiers:
       additionalProperties:
