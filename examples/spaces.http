@@ -1,2 +1,8 @@
 ### [Spaces] List all spaces (read-only)
 GET {{api-server}}/v1/spaces HTTP/1.1
+
+### [Spaces] Get space with id (read-only)
+GET {{api-server}}/v1/spaces/CH HTTP/1.1
+
+### [Spaces] Get space with full id (read-only)
+GET {{api-server}}/v1/spaces/https%3A%2F%2Fapps.eliona.io%2F1%2Fspaces%2FCH HTTP/1.1

@@ -786,8 +786,6 @@ components:
           type: string
         '@type':
           type: string
-      required:
-      - '@id'
       type: object
     CustomProperties:
       additionalProperties:
