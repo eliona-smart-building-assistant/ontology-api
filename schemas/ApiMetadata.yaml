@@ -1,11 +1,14 @@
 type: object
 properties:
-  '@context':
+  '@id':
     type: string
-    default: https://api.eliona.io/contexts/ApiMetadata.jsonld
+    default: https://example.eliona.io
   '@type':
     type: string
     default: https://api.eliona.io/schema#APIMetadata
+  '@context':
+    type: string
+    default: https://api.eliona.io/contexts/ApiMetadata.jsonld
   version:
     type: string
     example: "1.0.0"

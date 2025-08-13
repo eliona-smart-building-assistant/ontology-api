@@ -2,6 +2,7 @@ type: object
 properties:
   '@id':
     type: string
+    example: https://example.eliona.io/spaces/project/space
   '@type':
     type: string
     default: dtmi:org:w3id:rec:Space;1

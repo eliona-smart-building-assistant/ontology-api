@@ -302,6 +302,8 @@ paths:
           description: Internal Server Error
         "400":
           description: Bad Request
+        "409":
+          description: Object already exists
         "201":
           content:
             application/ld+json:
@@ -633,11 +635,14 @@ components:
   schemas:
     ApiMetadata:
       properties:
-        '@context':
-          default: https://api.eliona.io/contexts/ApiMetadata.jsonld
+        '@id':
+          default: https://example.eliona.io
           type: string
         '@type':
           default: https://api.eliona.io/schema#APIMetadata
+          type: string
+        '@context':
+          default: https://api.eliona.io/contexts/ApiMetadata.jsonld
           type: string
         version:
           example: 1.0.0
@@ -668,6 +673,7 @@ components:
     Point:
       properties:
         '@id':
+          example: https://example.eliona.io/points/type/point
           type: string
         '@type':
           default: dtmi:org:brickschema:schema:Brick:Point;1
@@ -684,21 +690,30 @@ components:
         aggregate:
           type: string
         customProperties:
-          type: string
+          additionalProperties:
+            additionalProperties:
+              type: string
+            type: object
+          type: object
         customTags:
-          type: string
+          additionalProperties:
+            type: boolean
+          type: object
         hasQuantity:
           type: string
         hasSubstance:
           type: string
         identifiers:
-          type: string
+          additionalProperties:
+            type: string
+          type: object
         name:
           type: string
       type: object
     Space:
       properties:
         '@id':
+          example: https://example.eliona.io/spaces/project/space
           type: string
         '@type':
           default: dtmi:org:w3id:rec:Space;1
@@ -783,14 +798,6 @@ components:
           format: date-time
           type: string
       type: object
-    IdType:
-      nullable: true
-      properties:
-        '@id':
-          type: string
-        '@type':
-          type: string
-      type: object
     CustomProperties:
       additionalProperties:
         additionalProperties:
@@ -804,6 +811,14 @@ components:
     Identifiers:
       additionalProperties:
         type: string
+      type: object
+    IdType:
+      nullable: true
+      properties:
+        '@id':
+          type: string
+        '@type':
+          type: string
       type: object
     ExceptionEvent:
       properties:

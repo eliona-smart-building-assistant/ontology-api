@@ -2,6 +2,7 @@ type: object
 properties:
   '@id':
     type: string
+    example: https://example.eliona.io/points/type/point
   '@type':
     type: string
     default: dtmi:org:brickschema:schema:Brick:Point;1
@@ -24,14 +25,14 @@ properties:
   aggregate:
     type: string
   customProperties:
-    type: string
+    $ref: 'CustomProperties.yaml'
   customTags:
-    type: string
+    $ref: 'CustomTags.yaml'
   hasQuantity:
     type: string
   hasSubstance:
     type: string
   identifiers:
-    type: string
+    $ref: 'Identifiers.yaml'
   name:
     type: string
