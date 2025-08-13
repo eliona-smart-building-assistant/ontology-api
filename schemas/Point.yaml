@@ -11,15 +11,9 @@ properties:
     default: https://dev.realestatecore.io/contexts/Point.jsonld
   isPointOf:
     type: array
+    nullable: true
     items:
-      type: object
-      required:
-        - '@id'
-      properties:
-        '@id':
-          type: string
-        '@type':
-          type: string
+      $ref: "IdType.yaml"
   lastKnownValue:
     $ref: '../schemas/Value.yaml'
   aggregate:

@@ -1,0 +1,2 @@
+### [Points] List all points (read-only)
+GET {{api-server}}/v1/points HTTP/1.1
