@@ -856,7 +856,7 @@ components:
       allOf:
       - $ref: "#/components/schemas/HydraCollection"
       - properties:
-          member:
+          hydra:member:
             items:
               $ref: "#/components/schemas/Point"
             type: array
@@ -886,7 +886,7 @@ components:
       allOf:
       - $ref: "#/components/schemas/HydraCollection"
       - properties:
-          member:
+          hydra:member:
             items:
               $ref: "#/components/schemas/Alarm"
             type: array

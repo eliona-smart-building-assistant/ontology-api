@@ -18,7 +18,7 @@ get:
               - $ref: '../schemas/HydraCollection.yaml'
               - type: object
                 properties:
-                  member:
+                  hydra:member:
                     type: array
                     items:
                       $ref: '../schemas/Point.yaml'
