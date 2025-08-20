@@ -1,2 +1,18 @@
 ### [Points] List all points (read-only)
-GET {{api-server}}/v1/points?page=5 HTTP/1.1
+GET {{api-server}}/v1/points?page=20&size=5 HTTP/1.1
+
+### [Points] Get point by relative ID
+GET {{api-server}}/v1/points/Car Show room%2FPowerverbrauch%2Ffoobar
+
+### [Points] Get point by relative ID
+GET {{api-server}}/v1/points/https%3A%2F%2Fapps.eliona.io%2Fpoints%2FCar%20Show%20room%2FPowerverbrauch%2F1570
+
+### [Spaces] Create space (read-write)
+POST {{api-server}}/v1/points HTTP/1.1
+Content-Type: application/json+ld
+
+{
+  "@id": "https://apps.eliona.io/points/ExampleType/ExampleAttribute/ExamplePoint",
+  "@type": "dtmi:org:brickschema:schema:Brick:Point;1",
+  "@context": "https://dev.realestatecore.io/contexts/Point.jsonld"
+}
