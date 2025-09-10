@@ -884,14 +884,14 @@ components:
     Point:
       properties:
         '@id':
-          example: https://example.eliona.io/points/portfolio-id/type-name/point-id
+          example: https://example.eliona.io/points/portfolio-id/point-id
           format: uri
           type: string
         '@type':
           default: dtmi:org:brickschema:schema:Brick:Point;1
           type: string
         '@context':
-          default: https://dev.realestatecore.io/contexts/Point.jsonld
+          default: https://api.eliona.io/contexts/Point.jsonld
           type: string
         isPointOf:
           items:
@@ -920,7 +920,11 @@ components:
           additionalProperties:
             type: string
           type: object
+        typeName:
+          example: AHU_Supply_Air_Temp_Sensor
+          type: string
         name:
+          example: Supply Air Temp
           type: string
       type: object
     Alarm:
