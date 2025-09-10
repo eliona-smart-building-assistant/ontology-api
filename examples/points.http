@@ -3,11 +3,15 @@ GET {{api-server}}/v1/points?page=20&size=5 HTTP/1.1
 X-Api-Key: {{read-only-token}}
 
 ### [Points] Get point by relative ID
-GET {{api-server}}/v1/points/test_asset_type%2Ftest_temperature%2F483
+GET {{api-server}}/v1/points/1698_483_2ea72d12-8a94-429b-a333-2371911d365f
 X-Api-Key: {{read-only-token}}
 
 ### [Points] Get point by relative ID
-GET {{api-server}}/v1/points/https%3A%2F%2Fexperimental.eliona.io%2Fpoints%2Ftest_asset_type%2Ftest_temperature%2F483
+GET {{api-server}}/v1/points/22222222%2F1698_483_2ea72d12-8a94-429b-a333-2371911d365f
+X-Api-Key: {{read-only-token}}
+
+### [Points] Get point by absolute ID
+GET {{api-server}}/v1/points/https%3A%2F%2Fexperimental.eliona.io%2Fpoints%2F22222222%2F1698_483_2ea72d12-8a94-429b-a333-2371911d365f
 X-Api-Key: {{read-only-token}}
 
 ### [Spaces] Create space (read-write)
@@ -16,7 +20,7 @@ X-Api-Key: {{read-write-token}}
 Content-Type: application/json+ld
 
 {
-  "@id": "https://experimental.eliona.io/points/ExampleType/ExampleAttribute/ExamplePoint",
+  "@id": "https://experimental.eliona.io/points/22222222%2FExamplePoint",
   "@type": "dtmi:org:brickschema:schema:Brick:Point;1",
   "@context": "https://dev.realestatecore.io/contexts/Point.jsonld"
 }

@@ -926,6 +926,9 @@ components:
         name:
           example: Supply Air Temp
           type: string
+      required:
+      - name
+      - typeName
       type: object
     Alarm:
       properties:
