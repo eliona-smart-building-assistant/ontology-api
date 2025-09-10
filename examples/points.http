@@ -3,7 +3,7 @@ GET {{api-server}}/v1/points?page=20&size=5 HTTP/1.1
 X-Api-Key: {{read-only-token}}
 
 ### [Points] Get point by relative ID
-GET {{api-server}}/v1/points/1698_483_2ea72d12-8a94-429b-a333-2371911d365f
+GET {{api-server}}/v1/points/ExamplePoint
 X-Api-Key: {{read-only-token}}
 
 ### [Points] Get point by relative ID
@@ -22,5 +22,7 @@ Content-Type: application/json+ld
 {
   "@id": "https://experimental.eliona.io/points/22222222%2FExamplePoint",
   "@type": "dtmi:org:brickschema:schema:Brick:Point;1",
-  "@context": "https://dev.realestatecore.io/contexts/Point.jsonld"
+  "@context": "https://dev.realestatecore.io/contexts/Point.jsonld",
+  "typeName": "test_asset_type",
+  "name": "test_message"
 }
