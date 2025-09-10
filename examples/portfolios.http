@@ -1,0 +1,11 @@
+### [Portfolios] List all portfolios (read-only)
+GET {{api-server}}/v1/portfolios HTTP/1.1
+X-Api-Key: {{read-only-token}}
+
+### [Portfolios] List all portfolios with page and size (read-only)
+GET {{api-server}}/v1/portfolios?page=2&size=10 HTTP/1.1
+X-Api-Key: {{read-only-token}}
+
+### [Portfolios] Get portfolios with id (read-only)
+GET {{api-server}}/v1/portfolios/22222222 HTTP/1.1
+X-Api-Key: {{read-only-token}}

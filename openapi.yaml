@@ -811,7 +811,7 @@ components:
           type: string
         includes:
           items:
-            type: object
+            $ref: "#/components/schemas/IdType"
           nullable: true
           type: array
         customProperties:
@@ -954,6 +954,14 @@ components:
         name:
           type: string
       type: object
+    IdType:
+      nullable: true
+      properties:
+        '@id':
+          type: string
+        '@type':
+          type: string
+      type: object
     CustomProperties:
       additionalProperties:
         additionalProperties:
@@ -967,14 +975,6 @@ components:
     Identifiers:
       additionalProperties:
         type: string
-      type: object
-    IdType:
-      nullable: true
-      properties:
-        '@id':
-          type: string
-        '@type':
-          type: string
       type: object
     Value:
       nullable: true
