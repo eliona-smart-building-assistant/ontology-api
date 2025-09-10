@@ -2,7 +2,8 @@ type: object
 properties:
   '@id':
     type: string
-    example: https://example.eliona.io/points/type/point
+    format: uri
+    example: https://example.eliona.io/points/portfolio-id/type-name/point-id
   '@type':
     type: string
     default: dtmi:org:brickschema:schema:Brick:Point;1

@@ -63,7 +63,7 @@ paths:
       summary: OpenAPI specification for this API version
       tags:
       - Version
-  /points:
+  /portfolios:
     get:
       parameters:
       - description: "If the result set is large, pagination across the results can\
@@ -106,38 +106,15 @@ paths:
           content:
             application/ld+json:
               schema:
-                $ref: "#/components/schemas/_points_get_200_response"
-          description: An array of 'Point' objects.
-      summary: Get 'Point' entities.
+                $ref: "#/components/schemas/_portfolios_get_200_response"
+          description: An array of 'Portfolio' objects.
+      summary: Get 'Portfolio' entities.
       tags:
-      - Points
-    post:
-      parameters: []
-      requestBody:
-        content:
-          application/ld+json:
-            schema:
-              $ref: "#/components/schemas/Point"
-        description: New 'Point' entity that is to be added.
-        required: true
-      responses:
-        "500":
-          description: Internal Server Error
-        "400":
-          description: Bad Request
-        "201":
-          content:
-            application/ld+json:
-              schema:
-                $ref: "#/components/schemas/Point"
-          description: Entity was successfully created (new representation returned).
-      summary: Create a new 'Point' object.
-      tags:
-      - Points
-  /points/{id}:
+      - Portfolios
+  /portfolios/{id}:
     delete:
       parameters:
-      - description: Id of 'Point' to delete.
+      - description: Id of 'Portfolio' to delete.
         in: path
         name: id
         required: true
@@ -145,17 +122,18 @@ paths:
           type: string
       responses:
         "404":
-          description: An object of type 'Point' with the specified ID was not found.
+          description: An object of type 'Portfolio' with the specified ID was not
+            found.
         "500":
           description: Internal Server Error
         "200":
-          description: '''Point'' entity was successfully deleted.'
-      summary: Delete a 'Point' object.
+          description: '''Portfolio'' entity was successfully deleted.'
+      summary: Delete a 'Portfolio' object.
       tags:
-      - Points
+      - Portfolios
     get:
       parameters:
-      - description: Id of 'Point' to return.
+      - description: Id of 'Portfolio' to return.
         in: path
         name: id
         required: true
@@ -163,21 +141,22 @@ paths:
           type: string
       responses:
         "404":
-          description: An object of type 'Point' with the specified ID was not found.
+          description: An object of type 'Portfolio' with the specified ID was not
+            found.
         "500":
           description: Internal Server Error
         "200":
           content:
             application/ld+json:
               schema:
-                $ref: "#/components/schemas/Point"
-          description: A 'Point' object.
-      summary: Get a specific 'Point' object.
+                $ref: "#/components/schemas/Portfolio"
+          description: A 'Portfolio' object.
+      summary: Get a specific 'Portfolio' object.
       tags:
-      - Points
+      - Portfolios
     patch:
       parameters:
-      - description: Id of 'Point' to update.
+      - description: Id of 'Portfolio' to update.
         in: path
         name: id
         required: true
@@ -187,7 +166,7 @@ paths:
         content:
           application/ld+json:
             schema:
-              $ref: "#/components/schemas/_points__id__patch_request"
+              $ref: "#/components/schemas/_portfolios__id__patch_request"
         description: "A single JSON key-value pair (plus @context), indicating the\
           \ property to update and its new value. Note that the Swagger UI does not\
           \ properly show the size constraint on this parameter; but the underlying\
@@ -197,49 +176,19 @@ paths:
         "400":
           description: Bad Request
         "404":
-          description: An object of type 'Point' with the specified ID was not found.
+          description: An object of type 'Portfolio' with the specified ID was not
+            found.
         "500":
           description: Internal Server Error
         "200":
           content:
             application/ld+json:
               schema:
-                $ref: "#/components/schemas/Point"
+                $ref: "#/components/schemas/Portfolio"
           description: Entity was updated successfully (new representation returned).
-      summary: Update a single property on a specific 'Point' object.
+      summary: Update a single property on a specific 'Portfolio' object.
       tags:
-      - Points
-    put:
-      parameters:
-      - description: Id of 'Point' to update.
-        in: path
-        name: id
-        required: true
-        schema:
-          type: string
-      requestBody:
-        content:
-          application/ld+json:
-            schema:
-              $ref: "#/components/schemas/Point"
-        description: Updated data for 'Point' entity.
-        required: true
-      responses:
-        "400":
-          description: Bad Request
-        "404":
-          description: An object of type 'Point' with the specified ID was not found.
-        "500":
-          description: Internal Server Error
-        "200":
-          content:
-            application/ld+json:
-              schema:
-                $ref: "#/components/schemas/Point"
-          description: Entity was updated successfully (new representation returned).
-      summary: Update an existing 'Point' entity.
-      tags:
-      - Points
+      - Portfolios
   /spaces:
     get:
       parameters:
@@ -419,6 +368,183 @@ paths:
       summary: Update an existing 'Space' entity.
       tags:
       - Spaces
+  /points:
+    get:
+      parameters:
+      - description: "If the result set is large, pagination across the results can\
+          \ be employed; in that case, this parameter defines the page number (zero-indexed)\
+          \ that is requested by the client. The number of items included in each\
+          \ page is defined by the 'size' parameter. Default is 0, i.e., the first\
+          \ results page is returned."
+        in: query
+        name: page
+        schema:
+          default: 0
+          format: int32
+          minimum: 0
+          type: integer
+      - description: The number of items to display on a returned results page (see
+          the page parameter).
+        in: query
+        name: size
+        schema:
+          default: 20
+          format: int32
+          maximum: 100
+          minimum: 0
+          type: integer
+      - description: The field and direction to sort results on.
+        example: asc
+        in: query
+        name: sort
+        schema:
+          enum:
+          - asc
+          - desc
+          type: string
+      responses:
+        "400":
+          description: Bad Request
+        "500":
+          description: Internal Server Error
+        "200":
+          content:
+            application/ld+json:
+              schema:
+                $ref: "#/components/schemas/_points_get_200_response"
+          description: An array of 'Point' objects.
+      summary: Get 'Point' entities.
+      tags:
+      - Points
+    post:
+      parameters: []
+      requestBody:
+        content:
+          application/ld+json:
+            schema:
+              $ref: "#/components/schemas/Point"
+        description: New 'Point' entity that is to be added.
+        required: true
+      responses:
+        "500":
+          description: Internal Server Error
+        "400":
+          description: Bad Request
+        "201":
+          content:
+            application/ld+json:
+              schema:
+                $ref: "#/components/schemas/Point"
+          description: Entity was successfully created (new representation returned).
+      summary: Create a new 'Point' object.
+      tags:
+      - Points
+  /points/{id}:
+    delete:
+      parameters:
+      - description: Id of 'Point' to delete.
+        in: path
+        name: id
+        required: true
+        schema:
+          type: string
+      responses:
+        "404":
+          description: An object of type 'Point' with the specified ID was not found.
+        "500":
+          description: Internal Server Error
+        "200":
+          description: '''Point'' entity was successfully deleted.'
+      summary: Delete a 'Point' object.
+      tags:
+      - Points
+    get:
+      parameters:
+      - description: Id of 'Point' to return.
+        in: path
+        name: id
+        required: true
+        schema:
+          type: string
+      responses:
+        "404":
+          description: An object of type 'Point' with the specified ID was not found.
+        "500":
+          description: Internal Server Error
+        "200":
+          content:
+            application/ld+json:
+              schema:
+                $ref: "#/components/schemas/Point"
+          description: A 'Point' object.
+      summary: Get a specific 'Point' object.
+      tags:
+      - Points
+    patch:
+      parameters:
+      - description: Id of 'Point' to update.
+        in: path
+        name: id
+        required: true
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/ld+json:
+            schema:
+              $ref: "#/components/schemas/_points__id__patch_request"
+        description: "A single JSON key-value pair (plus @context), indicating the\
+          \ property to update and its new value. Note that the Swagger UI does not\
+          \ properly show the size constraint on this parameter; but the underlying\
+          \ OpenAPI Specification document does."
+        required: true
+      responses:
+        "400":
+          description: Bad Request
+        "404":
+          description: An object of type 'Point' with the specified ID was not found.
+        "500":
+          description: Internal Server Error
+        "200":
+          content:
+            application/ld+json:
+              schema:
+                $ref: "#/components/schemas/Point"
+          description: Entity was updated successfully (new representation returned).
+      summary: Update a single property on a specific 'Point' object.
+      tags:
+      - Points
+    put:
+      parameters:
+      - description: Id of 'Point' to update.
+        in: path
+        name: id
+        required: true
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/ld+json:
+            schema:
+              $ref: "#/components/schemas/Point"
+        description: Updated data for 'Point' entity.
+        required: true
+      responses:
+        "400":
+          description: Bad Request
+        "404":
+          description: An object of type 'Point' with the specified ID was not found.
+        "500":
+          description: Internal Server Error
+        "200":
+          content:
+            application/ld+json:
+              schema:
+                $ref: "#/components/schemas/Point"
+          description: Entity was updated successfully (new representation returned).
+      summary: Update an existing 'Point' entity.
+      tags:
+      - Points
   /alarms:
     get:
       parameters:
@@ -637,6 +763,7 @@ components:
       properties:
         '@id':
           default: https://example.eliona.io
+          format: uri
           type: string
         '@type':
           default: https://api.eliona.io/schema#APIMetadata
@@ -670,26 +797,23 @@ components:
       - '@type'
       - hydra:member
       type: object
-    Point:
+    Portfolio:
       properties:
         '@id':
-          example: https://example.eliona.io/points/type/point
+          example: https://example.eliona.io/portfolio/portfolio-id
+          format: uri
           type: string
         '@type':
-          default: dtmi:org:brickschema:schema:Brick:Point;1
+          default: dtmi:org:w3id:rec:Portfolio;1
           type: string
         '@context':
-          default: https://dev.realestatecore.io/contexts/Point.jsonld
+          default: https://dev.realestatecore.io/contexts/Collection.jsonld
           type: string
-        isPointOf:
+        includes:
           items:
-            $ref: "#/components/schemas/IdType"
+            type: object
           nullable: true
           type: array
-        lastKnownValue:
-          $ref: "#/components/schemas/Value"
-        aggregate:
-          type: string
         customProperties:
           additionalProperties:
             additionalProperties:
@@ -700,10 +824,6 @@ components:
           additionalProperties:
             type: boolean
           type: object
-        hasQuantity:
-          type: string
-        hasSubstance:
-          type: string
         identifiers:
           additionalProperties:
             type: string
@@ -714,7 +834,8 @@ components:
     Space:
       properties:
         '@id':
-          example: https://example.eliona.io/spaces/project/space
+          example: https://example.eliona.io/spaces/portfolio-id/space-id
+          format: uri
           type: string
         '@type':
           default: dtmi:org:w3id:rec:Space;1
@@ -760,6 +881,48 @@ components:
         name:
           type: string
       type: object
+    Point:
+      properties:
+        '@id':
+          example: https://example.eliona.io/points/portfolio-id/type-name/point-id
+          format: uri
+          type: string
+        '@type':
+          default: dtmi:org:brickschema:schema:Brick:Point;1
+          type: string
+        '@context':
+          default: https://dev.realestatecore.io/contexts/Point.jsonld
+          type: string
+        isPointOf:
+          items:
+            $ref: "#/components/schemas/IdType"
+          nullable: true
+          type: array
+        lastKnownValue:
+          $ref: "#/components/schemas/Value"
+        aggregate:
+          type: string
+        customProperties:
+          additionalProperties:
+            additionalProperties:
+              type: string
+            type: object
+          type: object
+        customTags:
+          additionalProperties:
+            type: boolean
+          type: object
+        hasQuantity:
+          type: string
+        hasSubstance:
+          type: string
+        identifiers:
+          additionalProperties:
+            type: string
+          type: object
+        name:
+          type: string
+      type: object
     Alarm:
       properties:
         '@id':
@@ -791,6 +954,20 @@ components:
         name:
           type: string
       type: object
+    CustomProperties:
+      additionalProperties:
+        additionalProperties:
+          type: string
+        type: object
+      type: object
+    CustomTags:
+      additionalProperties:
+        type: boolean
+      type: object
+    Identifiers:
+      additionalProperties:
+        type: string
+      type: object
     IdType:
       nullable: true
       properties:
@@ -808,23 +985,10 @@ components:
           format: date-time
           type: string
       type: object
-    CustomProperties:
-      additionalProperties:
-        additionalProperties:
-          type: string
-        type: object
-      type: object
-    CustomTags:
-      additionalProperties:
-        type: boolean
-      type: object
-    Identifiers:
-      additionalProperties:
-        type: string
-      type: object
     ExceptionEvent:
       properties:
         '@id':
+          format: uri
           type: string
         '@type':
           default: dtmi:org:w3id:rec:ExceptionEvent;1
@@ -854,18 +1018,18 @@ components:
           format: date-time
           type: string
       type: object
-    _points_get_200_response:
+    _portfolios_get_200_response:
       allOf:
       - $ref: "#/components/schemas/HydraCollection"
       - properties:
           hydra:member:
             items:
-              $ref: "#/components/schemas/Point"
+              $ref: "#/components/schemas/Portfolio"
             type: array
         type: object
-    _points__id__patch_request:
+    _portfolios__id__patch_request:
       allOf:
-      - $ref: "#/components/schemas/Point"
+      - $ref: "#/components/schemas/Portfolio"
       - maxProperties: 2
         minProperties: 2
         type: object
@@ -881,6 +1045,21 @@ components:
     _spaces__id__patch_request:
       allOf:
       - $ref: "#/components/schemas/Space"
+      - maxProperties: 2
+        minProperties: 2
+        type: object
+    _points_get_200_response:
+      allOf:
+      - $ref: "#/components/schemas/HydraCollection"
+      - properties:
+          hydra:member:
+            items:
+              $ref: "#/components/schemas/Point"
+            type: array
+        type: object
+    _points__id__patch_request:
+      allOf:
+      - $ref: "#/components/schemas/Point"
       - maxProperties: 2
         minProperties: 2
         type: object

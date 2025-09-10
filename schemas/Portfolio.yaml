@@ -1,0 +1,25 @@
+type: object
+properties:
+  '@id':
+    type: string
+    format: uri
+    example: https://example.eliona.io/portfolio/portfolio-id
+  '@type':
+    type: string
+    default: dtmi:org:w3id:rec:Portfolio;1
+  '@context':
+    type: string
+    default: https://dev.realestatecore.io/contexts/Collection.jsonld
+  includes:
+    type: array
+    nullable: true
+    items:
+      type: object
+  customProperties:
+    $ref: 'CustomProperties.yaml'
+  customTags:
+    $ref: 'CustomTags.yaml'
+  identifiers:
+    $ref: 'Identifiers.yaml'
+  name:
+    type: string

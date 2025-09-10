@@ -1,25 +1,31 @@
 ### [Spaces] List all spaces (read-only)
 GET {{api-server}}/v1/spaces HTTP/1.1
+X-Api-Key: {{read-only-token}}
 
 ### [Spaces] List all spaces with page and size (read-only)
 GET {{api-server}}/v1/spaces?page=2&size=10 HTTP/1.1
+X-Api-Key: {{read-only-token}}
 
 ### [Spaces] Get space with id (read-only)
-GET {{api-server}}/v1/spaces/spaces%2F1%2FTest6 HTTP/1.1
+GET {{api-server}}/v1/spaces/spaces%2FTest6 HTTP/1.1
+X-Api-Key: {{read-only-token}}
 
 ### [Spaces] Get space with id (read-only)
-GET {{api-server}}/v1/spaces/1%2FTest7 HTTP/1.1
+GET {{api-server}}/v1/spaces/Test7 HTTP/1.1
+X-Api-Key: {{read-only-token}}
 
 ### [Spaces] Get space with full id (read-only)
-GET {{api-server}}/v1/spaces/https%3A%2F%2Fapps.eliona.io%2Fspaces%2F1%2FTest7 HTTP/1.1
+GET {{api-server}}/v1/spaces/https%3A%2F%2Fexperimental.eliona.io%2Fspaces%2FTest7 HTTP/1.1
+X-Api-Key: {{read-only-token}}
 
 ### [Spaces] Create space (read-write)
 POST {{api-server}}/v1/spaces HTTP/1.1
+X-Api-Key: {{read-write-token}}
 Content-Type: application/json+ld
 
 {
-  "@id": "https://apps.eliona.io/spaces/1/Test7",
-  "@type": "dtmi:org:w3id:rec:Space;6",
+  "@id": "https://experimental.eliona.io/spaces/Test7",
+  "@type": "dtmi:org:w3id:rec:Space;1",
   "@context": "https://dev.realestatecore.io/contexts/Space.jsonld",
   "name": "Test"
 }

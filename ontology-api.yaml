@@ -63,17 +63,23 @@ paths:
   /version/openapi.json:
     $ref: './paths/version-openapi.yaml'
 
-  /points:
-    $ref: './paths/points.yaml'
+  /portfolios:
+    $ref: './paths/portfolios.yaml'
 
-  /points/{id}:
-    $ref: './paths/points-id.yaml'
+  /portfolios/{id}:
+    $ref: './paths/portfolios-id.yaml'
 
   /spaces:
     $ref: './paths/spaces.yaml'
 
   /spaces/{id}:
     $ref: './paths/spaces-id.yaml'
+
+  /points:
+    $ref: './paths/points.yaml'
+
+  /points/{id}:
+    $ref: './paths/points-id.yaml'
 
   /alarms:
     $ref: './paths/alarms.yaml'

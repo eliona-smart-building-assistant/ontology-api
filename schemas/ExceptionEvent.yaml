@@ -2,6 +2,7 @@ type: object
 properties:
   '@id':
     type: string
+    format: uri
   '@type':
     type: string
     default: dtmi:org:w3id:rec:ExceptionEvent;1
