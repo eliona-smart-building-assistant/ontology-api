@@ -18,7 +18,7 @@ properties:
         type: string
       '@type':
         type: string
-        default: dtmi:org:brickschema:schema:Brick:Point;1
+        default: dtmi:io:eliona:Point;1
   value:
     type: string
   customProperties:

@@ -888,7 +888,7 @@ components:
           format: uri
           type: string
         '@type':
-          default: dtmi:org:brickschema:schema:Brick:Point;1
+          default: dtmi:io:eliona:Point;1
           type: string
         '@context':
           default: https://api.eliona.io/contexts/Point.jsonld
@@ -1130,7 +1130,7 @@ components:
         '@id':
           type: string
         '@type':
-          default: dtmi:org:brickschema:schema:Brick:Point;1
+          default: dtmi:io:eliona:Point;1
           type: string
       required:
       - '@id'

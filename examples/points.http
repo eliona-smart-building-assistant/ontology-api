@@ -21,7 +21,7 @@ Content-Type: application/json+ld
 
 {
   "@id": "https://experimental.eliona.io/points/22222222%2FExamplePoint",
-  "@type": "dtmi:org:brickschema:schema:Brick:Point;1",
+  "@type": "dtmi:io:eliona:Point;1",
   "@context": "https://dev.realestatecore.io/contexts/Point.jsonld",
   "typeName": "test_asset_type",
   "name": "test_message"
