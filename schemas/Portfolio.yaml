@@ -3,7 +3,7 @@ properties:
   '@id':
     type: string
     format: uri
-    example: https://example.eliona.io/portfolio/portfolio-id
+    example: https://example.eliona.io/portfolios/portfolio-uuid
   '@type':
     type: string
     default: dtmi:org:w3id:rec:Portfolio;1

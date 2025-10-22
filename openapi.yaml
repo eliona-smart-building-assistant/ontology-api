@@ -762,7 +762,7 @@ components:
     ApiMetadata:
       properties:
         '@id':
-          default: https://example.eliona.io
+          default: https://example.eliona.io/version
           format: uri
           type: string
         '@type':
@@ -800,7 +800,7 @@ components:
     Portfolio:
       properties:
         '@id':
-          example: https://example.eliona.io/portfolio/portfolio-id
+          example: https://example.eliona.io/portfolios/portfolio-uuid
           format: uri
           type: string
         '@type':
@@ -834,7 +834,7 @@ components:
     Space:
       properties:
         '@id':
-          example: https://example.eliona.io/spaces/portfolio-id/space-id
+          example: https://example.eliona.io/spaces/space-uuid
           format: uri
           type: string
         '@type':
@@ -884,14 +884,14 @@ components:
     Point:
       properties:
         '@id':
-          example: https://example.eliona.io/points/portfolio-id/point-id
+          example: https://example.eliona.io/points/point-uuid
           format: uri
           type: string
         '@type':
-          default: dtmi:io:eliona:Point;1
+          default: dtmi:org:brickschema:schema:Brick:Point;1
           type: string
         '@context':
-          default: https://api.eliona.io/contexts/Point.jsonld
+          default: https://dev.realestatecore.io/contexts/Point.jsonld
           type: string
         isPointOf:
           items:
@@ -920,12 +920,6 @@ components:
           additionalProperties:
             type: string
           type: object
-        typeName:
-          example: AHU_Supply_Air_Temp_Sensor
-          type: string
-        name:
-          example: Supply Air Temp
-          type: string
       required:
       - name
       - typeName

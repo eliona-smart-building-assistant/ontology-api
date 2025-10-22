@@ -6,13 +6,13 @@ properties:
   '@id':
     type: string
     format: uri
-    example: https://example.eliona.io/points/portfolio-id/point-id
+    example: https://example.eliona.io/points/point-uuid
   '@type':
     type: string
-    default: dtmi:io:eliona:Point;1
+    default: dtmi:org:brickschema:schema:Brick:Point;1
   '@context':
     type: string
-    default: https://api.eliona.io/contexts/Point.jsonld
+    default: https://dev.realestatecore.io/contexts/Point.jsonld
   isPointOf:
     type: array
     nullable: true
@@ -32,9 +32,3 @@ properties:
     type: string
   identifiers:
     $ref: 'Identifiers.yaml'
-  typeName:
-    type: string
-    example: AHU_Supply_Air_Temp_Sensor
-  name:
-    type: string
-    example: Supply Air Temp

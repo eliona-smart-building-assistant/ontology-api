@@ -3,7 +3,7 @@ properties:
   '@id':
     type: string
     format: uri
-    default: https://example.eliona.io
+    default: https://example.eliona.io/version
   '@type':
     type: string
     default: https://api.eliona.io/schema#APIMetadata
