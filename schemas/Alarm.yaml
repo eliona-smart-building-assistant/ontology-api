@@ -2,12 +2,17 @@ type: object
 properties:
   '@id':
     type: string
+    format: uri
+    example: https://example.eliona.io/alarms/alarm-id
+    nullable: true
   '@type':
     type: string
     default: dtmi:org:brickschema:schema:Brick:Alarm;1
+    nullable: true
   '@context':
     type: string
     default: https://dev.realestatecore.io/contexts/Alarm.jsonld
+    nullable: true
   isPointOf:
     type: array
     items:

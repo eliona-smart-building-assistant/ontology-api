@@ -3,13 +3,16 @@ properties:
   '@id':
     type: string
     format: uri
-    example: https://example.eliona.io/spaces/space-uuid
+    example: https://example.eliona.io/spaces/space-id
+    nullable: true
   '@type':
     type: string
     default: dtmi:org:w3id:rec:Space;1
+    nullable: true
   '@context':
     type: string
     default: https://dev.realestatecore.io/contexts/Space.jsonld
+    nullable: true
   geometry:
     $ref: "IdType.yaml"
   georeference:

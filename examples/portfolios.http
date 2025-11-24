@@ -7,5 +7,5 @@ GET {{api-server}}/v1/portfolios?page=2&size=10 HTTP/1.1
 X-Api-Key: {{read-only-token}}
 
 ### [Portfolios] Get portfolios with id (read-only)
-GET {{api-server}}/v1/portfolios/22222222 HTTP/1.1
+GET {{api-server}}/v1/portfolios/5a01cd84-b514-4101-ac5f-2a6fe55b6b99 HTTP/1.1
 X-Api-Key: {{read-only-token}}

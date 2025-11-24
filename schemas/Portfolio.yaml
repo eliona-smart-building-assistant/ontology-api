@@ -3,13 +3,16 @@ properties:
   '@id':
     type: string
     format: uri
-    example: https://example.eliona.io/portfolios/portfolio-uuid
+    example: https://example.eliona.io/portfolios/portfolio-id
+    nullable: true
   '@type':
     type: string
     default: dtmi:org:w3id:rec:Portfolio;1
+    nullable: true
   '@context':
     type: string
     default: https://dev.realestatecore.io/contexts/Collection.jsonld
+    nullable: true
   includes:
     type: array
     nullable: true

@@ -1,17 +1,13 @@
 ### [Points] List all points (read-only)
-GET {{api-server}}/v1/points?page=20&size=5 HTTP/1.1
+GET {{api-server}}/v1/points?page=5&size=20 HTTP/1.1
 X-Api-Key: {{read-only-token}}
 
 ### [Points] Get point by relative ID
-GET {{api-server}}/v1/points/ExamplePoint
-X-Api-Key: {{read-only-token}}
-
-### [Points] Get point by relative ID
-GET {{api-server}}/v1/points/22222222%2F1698_483_2ea72d12-8a94-429b-a333-2371911d365f
+GET {{api-server}}/v1/points/cf468816-b4c7-53e4-9e44-308517effdcf
 X-Api-Key: {{read-only-token}}
 
 ### [Points] Get point by absolute ID
-GET {{api-server}}/v1/points/https%3A%2F%2Fexperimental.eliona.io%2Fpoints%2F22222222%2F1698_483_2ea72d12-8a94-429b-a333-2371911d365f
+GET {{api-server}}/v1/points/https%3A%2F%2Fexperimental.eliona.io%2Fpoints%2Fcf468816-b4c7-53e4-9e44-308517effdcf
 X-Api-Key: {{read-only-token}}
 
 ### [Spaces] Create space (read-write)

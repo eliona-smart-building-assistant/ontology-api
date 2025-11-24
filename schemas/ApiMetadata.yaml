@@ -4,12 +4,15 @@ properties:
     type: string
     format: uri
     default: https://example.eliona.io/version
+    nullable: true
   '@type':
     type: string
     default: https://api.eliona.io/schema#APIMetadata
+    nullable: true
   '@context':
     type: string
     default: https://api.eliona.io/contexts/ApiMetadata.jsonld
+    nullable: true
   version:
     type: string
     example: "1.0.0"

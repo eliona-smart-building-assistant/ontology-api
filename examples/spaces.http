@@ -7,15 +7,11 @@ GET {{api-server}}/v1/spaces?page=2&size=10 HTTP/1.1
 X-Api-Key: {{read-only-token}}
 
 ### [Spaces] Get space with id (read-only)
-GET {{api-server}}/v1/spaces/spaces%2FTest6 HTTP/1.1
-X-Api-Key: {{read-only-token}}
-
-### [Spaces] Get space with id (read-only)
-GET {{api-server}}/v1/spaces/Test7 HTTP/1.1
+GET {{api-server}}/v1/spaces/1f5da9fa-9787-54a4-9da9-d7367d7c604a HTTP/1.1
 X-Api-Key: {{read-only-token}}
 
 ### [Spaces] Get space with full id (read-only)
-GET {{api-server}}/v1/spaces/https%3A%2F%2Fexperimental.eliona.io%2Fspaces%2FTest7 HTTP/1.1
+GET {{api-server}}/v1/spaces/https%3A%2F%2Fexperimental.eliona.io%2Fspaces%2F1f5da9fa-9787-54a4-9da9-d7367d7c604a HTTP/1.1
 X-Api-Key: {{read-only-token}}
 
 ### [Spaces] Create space (read-write)
