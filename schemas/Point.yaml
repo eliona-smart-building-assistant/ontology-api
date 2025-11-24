@@ -11,11 +11,9 @@ properties:
   '@type':
     type: string
     default: dtmi:org:brickschema:schema:Brick:Point;1
-    nullable: true
   '@context':
     type: string
     default: https://dev.realestatecore.io/contexts/Point.jsonld
-    nullable: true
   isPointOf:
     type: array
     nullable: true

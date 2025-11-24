@@ -8,11 +8,9 @@ properties:
   '@type':
     type: string
     default: dtmi:org:w3id:rec:Portfolio;1
-    nullable: true
   '@context':
     type: string
     default: https://dev.realestatecore.io/contexts/Collection.jsonld
-    nullable: true
   includes:
     type: array
     nullable: true
