@@ -768,11 +768,9 @@ components:
           type: string
         '@type':
           default: https://api.eliona.io/schema#APIMetadata
-          nullable: true
           type: string
         '@context':
           default: https://api.eliona.io/contexts/ApiMetadata.jsonld
-          nullable: true
           type: string
         version:
           example: 1.0.0
@@ -809,11 +807,9 @@ components:
           type: string
         '@type':
           default: dtmi:org:w3id:rec:Portfolio;1
-          nullable: true
           type: string
         '@context':
           default: https://dev.realestatecore.io/contexts/Collection.jsonld
-          nullable: true
           type: string
         includes:
           items:
@@ -846,11 +842,9 @@ components:
           type: string
         '@type':
           default: dtmi:org:w3id:rec:Space;1
-          nullable: true
           type: string
         '@context':
           default: https://dev.realestatecore.io/contexts/Space.jsonld
-          nullable: true
           type: string
         geometry:
           $ref: "#/components/schemas/IdType"
@@ -899,11 +893,9 @@ components:
           type: string
         '@type':
           default: dtmi:org:brickschema:schema:Brick:Point;1
-          nullable: true
           type: string
         '@context':
           default: https://dev.realestatecore.io/contexts/Point.jsonld
-          nullable: true
           type: string
         isPointOf:
           items:
@@ -945,11 +937,9 @@ components:
           type: string
         '@type':
           default: dtmi:org:brickschema:schema:Brick:Alarm;1
-          nullable: true
           type: string
         '@context':
           default: https://dev.realestatecore.io/contexts/Alarm.jsonld
-          nullable: true
           type: string
         isPointOf:
           items:
