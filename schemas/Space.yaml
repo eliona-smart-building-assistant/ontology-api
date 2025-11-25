@@ -4,7 +4,6 @@ properties:
     type: string
     format: uri
     example: https://example.eliona.io/spaces/space-id
-    nullable: true
   '@type':
     type: string
     default: dtmi:org:w3id:rec:Space;1

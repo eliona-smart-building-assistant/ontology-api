@@ -7,7 +7,6 @@ properties:
     type: string
     format: uri
     example: https://example.eliona.io/points/point-id
-    nullable: true
   '@type':
     type: string
     default: dtmi:org:brickschema:schema:Brick:Point;1

@@ -3,7 +3,7 @@ GET {{api-server}}/v1/points?page=5&size=20 HTTP/1.1
 X-Api-Key: {{read-only-token}}
 
 ### [Points] Get point by relative ID
-GET {{api-server}}/v1/points/cf468816-b4c7-53e4-9e44-308517effdcf
+GET {{api-server}}/v1/points/c7b934aa-9839-59cb-914b-338b035e047b
 X-Api-Key: {{read-only-token}}
 
 ### [Points] Get point by absolute ID

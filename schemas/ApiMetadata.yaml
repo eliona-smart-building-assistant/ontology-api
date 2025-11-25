@@ -4,7 +4,6 @@ properties:
     type: string
     format: uri
     default: https://example.eliona.io/version
-    nullable: true
   '@type':
     type: string
     default: https://api.eliona.io/schema#APIMetadata
