@@ -166,7 +166,7 @@ paths:
         content:
           application/ld+json:
             schema:
-              $ref: "#/components/schemas/_portfolios__id__patch_request"
+              $ref: "#/components/schemas/Portfolio"
         description: "A single JSON key-value pair (plus @context), indicating the\
           \ property to update and its new value. Note that the Swagger UI does not\
           \ properly show the size constraint on this parameter; but the underlying\
@@ -315,7 +315,7 @@ paths:
         content:
           application/ld+json:
             schema:
-              $ref: "#/components/schemas/_spaces__id__patch_request"
+              $ref: "#/components/schemas/Space"
         description: "A single JSON key-value pair (plus @context), indicating the\
           \ property to update and its new value. Note that the Swagger UI does not\
           \ properly show the size constraint on this parameter; but the underlying\
@@ -492,7 +492,7 @@ paths:
         content:
           application/ld+json:
             schema:
-              $ref: "#/components/schemas/_points__id__patch_request"
+              $ref: "#/components/schemas/Point"
         description: "A single JSON key-value pair (plus @context), indicating the\
           \ property to update and its new value. Note that the Swagger UI does not\
           \ properly show the size constraint on this parameter; but the underlying\
@@ -669,7 +669,7 @@ paths:
         content:
           application/ld+json:
             schema:
-              $ref: "#/components/schemas/_alarms__id__patch_request"
+              $ref: "#/components/schemas/Alarm"
         description: "A single JSON key-value pair (plus @context), indicating the\
           \ property to update and its new value. Note that the Swagger UI does not\
           \ properly show the size constraint on this parameter; but the underlying\
@@ -1050,12 +1050,6 @@ components:
               $ref: "#/components/schemas/Portfolio"
             type: array
         type: object
-    _portfolios__id__patch_request:
-      allOf:
-      - $ref: "#/components/schemas/Portfolio"
-      - maxProperties: 2
-        minProperties: 2
-        type: object
     _spaces_get_200_response:
       allOf:
       - $ref: "#/components/schemas/HydraCollection"
@@ -1064,12 +1058,6 @@ components:
             items:
               $ref: "#/components/schemas/Space"
             type: array
-        type: object
-    _spaces__id__patch_request:
-      allOf:
-      - $ref: "#/components/schemas/Space"
-      - maxProperties: 2
-        minProperties: 2
         type: object
     _points_get_200_response:
       allOf:
@@ -1080,12 +1068,6 @@ components:
               $ref: "#/components/schemas/Point"
             type: array
         type: object
-    _points__id__patch_request:
-      allOf:
-      - $ref: "#/components/schemas/Point"
-      - maxProperties: 2
-        minProperties: 2
-        type: object
     _alarms_get_200_response:
       allOf:
       - $ref: "#/components/schemas/HydraCollection"
@@ -1094,12 +1076,6 @@ components:
             items:
               $ref: "#/components/schemas/Alarm"
             type: array
-        type: object
-    _alarms__id__patch_request:
-      allOf:
-      - $ref: "#/components/schemas/Alarm"
-      - maxProperties: 2
-        minProperties: 2
         type: object
     HydraCollection__context:
       properties:

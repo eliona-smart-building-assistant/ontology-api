@@ -66,11 +66,7 @@ patch:
     content:
       application/ld+json:
         schema:
-          allOf:
-            - $ref: '../schemas/Space.yaml'
-            - type: object
-              maxProperties: 2
-              minProperties: 2
+          $ref: '../schemas/Space.yaml'
   responses:
     400:
       description: Bad Request

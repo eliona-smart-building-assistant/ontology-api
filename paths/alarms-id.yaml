@@ -66,11 +66,7 @@ patch:
     content:
       application/ld+json:
         schema:
-          allOf:
-            - $ref: '../schemas/Alarm.yaml'
-            - type: object
-              maxProperties: 2
-              minProperties: 2
+          $ref: '../schemas/Alarm.yaml'
   responses:
     400:
       description: Bad Request
