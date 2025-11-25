@@ -39,3 +39,4 @@ properties:
     $ref: 'Identifiers.yaml'
   name:
     type: string
+    nullable: true

@@ -25,15 +25,19 @@ properties:
     $ref: '../schemas/ExceptionEvent.yaml'
   aggregate:
     type: string
+    nullable: true
   customProperties:
-    type: string
+    $ref: 'CustomProperties.yaml'
   customTags:
-    type: string
+    $ref: 'CustomTags.yaml'
   hasQuantity:
     type: string
+    nullable: true
   hasSubstance:
     type: string
+    nullable: true
   identifiers:
-    type: string
+    $ref: 'Identifiers.yaml'
   name:
     type: string
+    nullable: true

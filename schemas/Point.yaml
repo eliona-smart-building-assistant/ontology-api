@@ -22,15 +22,19 @@ properties:
     $ref: '../schemas/Value.yaml'
   aggregate:
     type: string
+    nullable: true
   customProperties:
     $ref: 'CustomProperties.yaml'
   customTags:
     $ref: 'CustomTags.yaml'
   hasQuantity:
     type: string
+    nullable: true
   hasSubstance:
     type: string
+    nullable: true
   identifiers:
     $ref: 'Identifiers.yaml'
   name:
     type: string
+    nullable: true

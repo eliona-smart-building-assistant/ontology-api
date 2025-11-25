@@ -25,3 +25,22 @@ Content-Type: application/json+ld
   "@context": "https://dev.realestatecore.io/contexts/Space.jsonld",
   "name": "Test"
 }
+
+### [Spaces] Update space (read-write)
+PATCH {{api-server}}/v1/spaces/1f5da9fa-9787-54a4-9da9-d7367d7c604a HTTP/1.1
+X-Api-Key: {{read-write-token}}
+Content-Type: application/json+ld
+
+{
+  "@context": "https://dev.realestatecore.io/contexts/Space.jsonld",
+  "hasPoint": [
+    {
+      "@id": "https://experimental.eliona.io/points/c7b934aa-9839-59cb-914b-338b035e047b",
+      "@type": "dtmi:org:brickschema:schema:Brick:Setpoint;1"
+    },
+    {
+      "@id": "https://experimental.eliona.io/points/cf468816-b4c7-53e4-9e44-308517effdcf",
+      "@type": "dtmi:org:brickschema:schema:Brick:Sensor;1"
+    }
+  ]
+}

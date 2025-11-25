@@ -829,6 +829,7 @@ components:
             type: string
           type: object
         name:
+          nullable: true
           type: string
       type: object
     Space:
@@ -879,6 +880,7 @@ components:
             type: string
           type: object
         name:
+          nullable: true
           type: string
       type: object
     Point:
@@ -901,6 +903,7 @@ components:
         lastKnownValue:
           $ref: "#/components/schemas/Value"
         aggregate:
+          nullable: true
           type: string
         customProperties:
           additionalProperties:
@@ -913,14 +916,17 @@ components:
             type: boolean
           type: object
         hasQuantity:
+          nullable: true
           type: string
         hasSubstance:
+          nullable: true
           type: string
         identifiers:
           additionalProperties:
             type: string
           type: object
         name:
+          nullable: true
           type: string
       required:
       - name
@@ -945,18 +951,30 @@ components:
         lastKnownValue:
           $ref: "#/components/schemas/ExceptionEvent"
         aggregate:
+          nullable: true
           type: string
         customProperties:
-          type: string
+          additionalProperties:
+            additionalProperties:
+              type: string
+            type: object
+          type: object
         customTags:
-          type: string
+          additionalProperties:
+            type: boolean
+          type: object
         hasQuantity:
+          nullable: true
           type: string
         hasSubstance:
+          nullable: true
           type: string
         identifiers:
-          type: string
+          additionalProperties:
+            type: string
+          type: object
         name:
+          nullable: true
           type: string
       type: object
     IdType:
