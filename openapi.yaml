@@ -924,6 +924,8 @@ components:
           additionalProperties:
             type: string
           type: object
+        name:
+          type: string
       required:
       - name
       - typeName

@@ -33,3 +33,5 @@ properties:
     type: string
   identifiers:
     $ref: 'Identifiers.yaml'
+  name:
+    type: string

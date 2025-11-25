@@ -20,7 +20,7 @@ X-Api-Key: {{read-write-token}}
 Content-Type: application/json+ld
 
 {
-  "@id": "https://experimental.eliona.io/spaces/Test7",
+  "@id": "https://experimental.eliona.io/spaces/3a7003b7-c5bb-5bbf-a6d1-48724578c8e1",
   "@type": "dtmi:org:w3id:rec:Space;1",
   "@context": "https://dev.realestatecore.io/contexts/Space.jsonld",
   "name": "Test"
