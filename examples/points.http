@@ -3,11 +3,11 @@ GET {{api-server}}/v1/points?page=20&size=100 HTTP/1.1
 X-Api-Key: {{read-only-token}}
 
 ### [Points] Get point by relative ID
-GET {{api-server}}/v1/points/122ewerererPoint
+GET {{api-server}}/v1/points/newPoint
 X-Api-Key: {{read-only-token}}
 
 ### [Points] Get point by absolute ID
-GET {{api-server}}/v1/points/https%3A%2F%2Fexperimental.eliona.io%2Fpoints%2Fcf468816-b4c7-53e4-9e44-308517effdcf
+GET {{api-server}}/v1/points/https%3A%2F%2Fexperimental.eliona.io%2Fpoints%2FnewPoint
 X-Api-Key: {{read-only-token}}
 
 ### [Spaces] Create space (read-write)
@@ -16,6 +16,7 @@ X-Api-Key: {{read-write-token}}
 Content-Type: application/json+ld
 
 {
+  "@Id": "newPoint",
   "@type": "dtmi:org:brickschema:schema:Brick:Point;1",
   "@context": "https://dev.realestatecore.io/contexts/Point.jsonld",
   "name": "test_message"
@@ -30,3 +31,7 @@ Content-Type: application/json+ld
   "@type": "dtmi:org:brickschema:schema:Brick:Sensor;1",
   "@context": "https://dev.realestatecore.io/contexts/Point.jsonld"
 }
+
+### [Spaces] Delete space (read-write)
+DELETE {{api-server}}/v1/points/122ewerererPoint HTTP/1.1
+X-Api-Key: {{read-write-token}}

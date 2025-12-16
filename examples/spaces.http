@@ -7,11 +7,11 @@ GET {{api-server}}/v1/spaces?page=2&size=10 HTTP/1.1
 X-Api-Key: {{read-only-token}}
 
 ### [Spaces] Get space with id (read-only)
-GET {{api-server}}/v1/spaces/1f5da9fa-9787-54a4-9da9-d7367d7c604a HTTP/1.1
+GET {{api-server}}/v1/spaces/newSpace HTTP/1.1
 X-Api-Key: {{read-only-token}}
 
 ### [Spaces] Get space with full id (read-only)
-GET {{api-server}}/v1/spaces/https%3A%2F%2Fexperimental.eliona.io%2Fspaces%2F1f5da9fa-9787-54a4-9da9-d7367d7c604a HTTP/1.1
+GET {{api-server}}/v1/spaces/https%3A%2F%2Fexperimental.eliona.io%2Fspaces%2FnewSpace HTTP/1.1
 X-Api-Key: {{read-only-token}}
 
 ### [Spaces] Create space (read-write)
@@ -20,18 +20,32 @@ X-Api-Key: {{read-write-token}}
 Content-Type: application/json+ld
 
 {
-  "@id": "https://experimental.eliona.io/spaces/3a7003b7-c5bb-5bbf-a6d1-48724578c8e1",
+  "@id": "https://experimental.eliona.io/spaces/newSpace",
   "@type": "dtmi:org:w3id:rec:Space;1",
   "@context": "https://dev.realestatecore.io/contexts/Space.jsonld",
-  "name": "Test"
+  "name": "New Space"
 }
 
 ### [Spaces] Update space (read-write)
-PATCH {{api-server}}/v1/spaces/1f5da9fa-9787-54a4-9da9-d7367d7c604a1 HTTP/1.1
+PUT {{api-server}}/v1/spaces/newSpace HTTP/1.1
 X-Api-Key: {{read-write-token}}
 Content-Type: application/json+ld
 
 {
   "@context": "https://dev.realestatecore.io/contexts/Space.jsonld",
-  "name": "Schweiz"
+  "name": "New Space Renamed"
 }
+
+### [Spaces] Update space (read-write)
+PATCH {{api-server}}/v1/spaces/newSpace HTTP/1.1
+X-Api-Key: {{read-write-token}}
+Content-Type: application/json+ld
+
+{
+  "@context": "https://dev.realestatecore.io/contexts/Space.jsonld",
+  "name": "New Space Renamed"
+}
+
+### [Spaces] Update space (read-write)
+DELETE {{api-server}}/v1/spaces/newSpace HTTP/1.1
+X-Api-Key: {{read-write-token}}
