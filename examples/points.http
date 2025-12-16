@@ -28,5 +28,5 @@ Content-Type: application/json+ld
 
 {
   "@type": "dtmi:org:brickschema:schema:Brick:Sensor;1",
-  "name": "test_message"
+  "@context": "https://dev.realestatecore.io/contexts/Point.jsonld"
 }
