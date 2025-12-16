@@ -928,9 +928,6 @@ components:
         name:
           nullable: true
           type: string
-      required:
-      - name
-      - typeName
       type: object
     Alarm:
       properties:

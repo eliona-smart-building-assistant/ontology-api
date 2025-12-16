@@ -1,9 +1,9 @@
 ### [Points] List all points (read-only)
-GET {{api-server}}/v1/points?page=5&size=20 HTTP/1.1
+GET {{api-server}}/v1/points?page=20&size=100 HTTP/1.1
 X-Api-Key: {{read-only-token}}
 
 ### [Points] Get point by relative ID
-GET {{api-server}}/v1/points/c7b934aa-9839-59cb-914b-338b035e047b
+GET {{api-server}}/v1/points/122ewerererPoint
 X-Api-Key: {{read-only-token}}
 
 ### [Points] Get point by absolute ID
@@ -16,8 +16,17 @@ X-Api-Key: {{read-write-token}}
 Content-Type: application/json+ld
 
 {
-  "@id": "https://experimental.eliona.io/points/122ewerererPoint",
   "@type": "dtmi:org:brickschema:schema:Brick:Point;1",
   "@context": "https://dev.realestatecore.io/contexts/Point.jsonld",
+  "name": "test_message"
+}
+
+### [Spaces] Update space (read-write)
+PUT {{api-server}}/v1/points/122ewerererPoint HTTP/1.1
+X-Api-Key: {{read-write-token}}
+Content-Type: application/json+ld
+
+{
+  "@type": "dtmi:org:brickschema:schema:Brick:Sensor;1",
   "name": "test_message"
 }

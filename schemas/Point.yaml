@@ -1,7 +1,4 @@
 type: object
-required:
-  - typeName
-  - name
 properties:
   '@id':
     type: string
