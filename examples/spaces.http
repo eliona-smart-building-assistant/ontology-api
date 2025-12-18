@@ -20,7 +20,7 @@ X-Api-Key: {{read-write-token}}
 Content-Type: application/json+ld
 
 {
-  "@id": "https://experimental.eliona.io/spaces/newSpace2",
+  "@id": "https://experimental.eliona.io/spaces/newSpace",
   "@type": "dtmi:org:w3id:rec:Space;1",
   "@context": "https://dev.realestatecore.io/contexts/Space.jsonld",
   "name": "New Space 2"
@@ -43,9 +43,15 @@ Content-Type: application/json+ld
 
 {
   "@context": "https://dev.realestatecore.io/contexts/Space.jsonld",
-  "name": "New Space Renamed"
+  "name": "New Space Renamed",
+  "hasPoint": [
+    {
+      "@id": "https://experimental.eliona.io/points/newPoint",
+      "@type": "dtmi:org:brickschema:schema:Brick:Point;1"
+    }
+  ]
 }
 
 ### [Spaces] Update space (read-write)
-DELETE {{api-server}}/v1/spaces/newSpace2 HTTP/1.1
+DELETE {{api-server}}/v1/spaces/newSpace HTTP/1.1
 X-Api-Key: {{read-write-token}}
